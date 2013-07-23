@@ -44,8 +44,11 @@ ios app
        * Show people that are supporting them 
        * Show people the user is supporting 
          * Tap on the profile to view more information (_nice to have_)
+         
 >> #### Screens
+
    >>> ##### Where are the design files for the screens?
+   
 >> #### Data and Control flows
 
 
