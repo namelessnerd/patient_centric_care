@@ -21,17 +21,17 @@ ios app
    their trusted circle. 
   
 >> #### Data objectives of the app
-       * Care plan objectives should be synced with the provider via API
-       * Collect / allow for completion demographic data if not already available in the care plan. 
-       * Lifestyle data via APIs
-       * Checkins we want to get: 
+       *Care plan objectives should be synced with the provider via API
+       *Collect / allow for completion demographic data if not already available in the care plan. 
+       *Lifestyle data via APIs
+       *Checkins we want to get: 
          1. Medication checkin
          2. Sync with exercise app for exercise checkin
          3. Food nutrition data either via MyFitnessPal (if things go through) or via a mock API
          4. Mood information based on checkin (asking questions about how users are feeling)
          5. Share information button with support group
          
->> #### Dashboards to create for user information 
+>> #### Screens and Dashboards to create for user information 
     * MyHealth showing key stats from medical records 
     * MyCarePlan  showing 
        * Next upcoming checkin
