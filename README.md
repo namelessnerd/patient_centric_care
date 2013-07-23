@@ -21,7 +21,7 @@ ios app
    their trusted circle. 
   
 >> #### Data objectives of the app
-   >>> * Care plan objectives should be synced with the provider via API
+       * Care plan objectives should be synced with the provider via API
        * Collect / allow for completion demographic data if not already available in the care plan. 
        * Lifestyle data via APIs
        * Checkins we want to get: 
@@ -31,10 +31,18 @@ ios app
          4. Mood information based on checkin (asking questions about how users are feeling)
          5. Share information button with support group
          
->>> ##### Where are the design files for the screens?
->> #### Information to show the user
-    >>> * Medical history analytics 
+>> #### Dashboards to create for user information 
+    * MyHealth showing key stats from medical records 
+    * MyCarePlan  showing 
+       * Next upcoming checkin
+       * Care plan adherence analytics to the user 
+       * Relative analytics with respect to demographics, support network (_nice to have_)
+    * Support network  
+       * Show people that are supporting them 
+       * Show people the user is supporting 
+         * Tap on the profile to view more information (_nice to have_)
 >> #### Screens
+   >>> ##### Where are the design files for the screens?
 >> #### Data and Control flows
 
 
