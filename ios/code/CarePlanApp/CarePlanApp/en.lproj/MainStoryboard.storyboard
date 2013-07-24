@@ -1,23 +1,103 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2519" systemVersion="12A206j" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="2">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="12E55" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="2">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1856"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="2083"/>
     </dependencies>
     <scenes>
-        <!--class Prefix:identifier View Controller-->
+        <!--View Controller-->
         <scene sceneID="5">
             <objects>
                 <viewController id="2" customClass="ViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="3">
-                        <rect key="frame" x="0.0" y="20" width="320" height="460"/>
+                        <rect key="frame" x="0.0" y="20" width="320" height="548"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="signinpage.png" translatesAutoresizingMaskIntoConstraints="NO" id="Ngj-f1-Lx5"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email Address" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="d5y-aV-Eg4">
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eiL-6t-xVa">
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6sw-B3-m7p">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="36" id="GmR-3K-Lx6"/>
+                                    <constraint firstAttribute="width" constant="117" id="uV9-f2-9J9"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Button" image="signin.png">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="GAb-Kg-RLu" kind="modal" id="2QQ-Xg-eDt"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="6sw-B3-m7p" firstAttribute="centerX" secondItem="eiL-6t-xVa" secondAttribute="centerX" type="default" id="49I-zI-3uP"/>
+                            <constraint firstItem="Ngj-f1-Lx5" firstAttribute="bottom" secondItem="3" secondAttribute="bottom" type="default" id="Lbr-I1-Gfw"/>
+                            <constraint firstAttribute="bottom" secondItem="6sw-B3-m7p" secondAttribute="bottom" constant="53" id="Lus-SE-ocG"/>
+                            <constraint firstItem="6sw-B3-m7p" firstAttribute="top" secondItem="eiL-6t-xVa" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="MSv-U5-9hY"/>
+                            <constraint firstItem="Ngj-f1-Lx5" firstAttribute="top" secondItem="3" secondAttribute="top" type="default" id="PeU-8R-Blt"/>
+                            <constraint firstItem="eiL-6t-xVa" firstAttribute="top" secondItem="d5y-aV-Eg4" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="b8g-t4-9tG"/>
+                            <constraint firstItem="d5y-aV-Eg4" firstAttribute="leading" secondItem="3" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="bqM-gD-OCO"/>
+                            <constraint firstAttribute="trailing" secondItem="d5y-aV-Eg4" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="e3J-Ry-lqH"/>
+                            <constraint firstAttribute="trailing" secondItem="eiL-6t-xVa" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="eWj-gg-LFG"/>
+                            <constraint firstItem="Ngj-f1-Lx5" firstAttribute="leading" secondItem="3" secondAttribute="leading" type="default" id="oU2-ek-5VA"/>
+                            <constraint firstItem="Ngj-f1-Lx5" firstAttribute="trailing" secondItem="3" secondAttribute="trailing" type="default" id="vEO-9x-oab"/>
+                            <constraint firstItem="eiL-6t-xVa" firstAttribute="leading" secondItem="3" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="xYi-dA-d1j"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="99" y="118"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="wY3-Ih-4ei">
+            <objects>
+                <viewController id="GAb-Kg-RLu" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="IDA-gB-fa0">
+                        <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="linen.png" translatesAutoresizingMaskIntoConstraints="NO" id="eW9-a4-lJe"/>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="eW9-a4-lJe" firstAttribute="bottom" secondItem="IDA-gB-fa0" secondAttribute="bottom" type="default" id="Bag-ga-VKG"/>
+                            <constraint firstItem="eW9-a4-lJe" firstAttribute="leading" secondItem="IDA-gB-fa0" secondAttribute="leading" type="default" id="ceB-di-Gkd"/>
+                            <constraint firstItem="eW9-a4-lJe" firstAttribute="trailing" secondItem="IDA-gB-fa0" secondAttribute="trailing" type="default" id="jYm-LI-PYn"/>
+                            <constraint firstItem="eW9-a4-lJe" firstAttribute="top" secondItem="IDA-gB-fa0" secondAttribute="top" type="default" id="k1F-wk-dNr"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="hYk-IP-d6b"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9x6-Yu-Kgs" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="516" y="117"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="linen.png" width="640" height="1136"/>
+        <image name="signin.png" width="234" height="72"/>
+        <image name="signinpage.png" width="640" height="1136"/>
+    </resources>
+    <classes>
+        <class className="NSLayoutConstraint" superclassName="NSObject">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
+        </class>
+        <class className="ViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ViewController.h"/>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
