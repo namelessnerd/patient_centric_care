@@ -18,6 +18,10 @@
 		DB8F7559179F6A750089B018 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DB8F7558179F6A750089B018 /* Default-568h@2x.png */; };
 		DB8F755C179F6A750089B018 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DB8F755A179F6A750089B018 /* MainStoryboard.storyboard */; };
 		DB8F755F179F6A750089B018 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DB8F755E179F6A750089B018 /* ViewController.m */; };
+		DB8F756F179F6A980089B018 /* signin.png in Resources */ = {isa = PBXBuildFile; fileRef = DB8F7569179F6A980089B018 /* signin.png */; };
+		DB8F7570179F6A980089B018 /* signinpage.png in Resources */ = {isa = PBXBuildFile; fileRef = DB8F756A179F6A980089B018 /* signinpage.png */; };
+		DB8F7571179F6A980089B018 /* background_linen.png in Resources */ = {isa = PBXBuildFile; fileRef = DB8F756B179F6A980089B018 /* background_linen.png */; };
+		DB8F7573179F6D4E0089B018 /* linen.png in Resources */ = {isa = PBXBuildFile; fileRef = DB8F7572179F6D4E0089B018 /* linen.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +41,10 @@
 		DB8F755B179F6A750089B018 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
 		DB8F755D179F6A750089B018 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		DB8F755E179F6A750089B018 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		DB8F7569179F6A980089B018 /* signin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = signin.png; path = ../../../images/signin.png; sourceTree = "<group>"; };
+		DB8F756A179F6A980089B018 /* signinpage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = signinpage.png; path = ../../../images/signinpage.png; sourceTree = "<group>"; };
+		DB8F756B179F6A980089B018 /* background_linen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = background_linen.png; path = ../../../images/background_linen.png; sourceTree = "<group>"; };
+		DB8F7572179F6D4E0089B018 /* linen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = linen.png; path = ../../../images/linen.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +91,7 @@
 		DB8F7548179F6A750089B018 /* CarePlanApp */ = {
 			isa = PBXGroup;
 			children = (
+				DB8F7565179F6A890089B018 /* images */,
 				DB8F7551179F6A750089B018 /* AppDelegate.h */,
 				DB8F7552179F6A750089B018 /* AppDelegate.m */,
 				DB8F755A179F6A750089B018 /* MainStoryboard.storyboard */,
@@ -105,6 +114,17 @@
 				DB8F7558179F6A750089B018 /* Default-568h@2x.png */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		DB8F7565179F6A890089B018 /* images */ = {
+			isa = PBXGroup;
+			children = (
+				DB8F7572179F6D4E0089B018 /* linen.png */,
+				DB8F7569179F6A980089B018 /* signin.png */,
+				DB8F756A179F6A980089B018 /* signinpage.png */,
+				DB8F756B179F6A980089B018 /* background_linen.png */,
+			);
+			name = images;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -163,6 +183,10 @@
 				DB8F7557179F6A750089B018 /* Default@2x.png in Resources */,
 				DB8F7559179F6A750089B018 /* Default-568h@2x.png in Resources */,
 				DB8F755C179F6A750089B018 /* MainStoryboard.storyboard in Resources */,
+				DB8F756F179F6A980089B018 /* signin.png in Resources */,
+				DB8F7570179F6A980089B018 /* signinpage.png in Resources */,
+				DB8F7571179F6A980089B018 /* background_linen.png in Resources */,
+				DB8F7573179F6D4E0089B018 /* linen.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
