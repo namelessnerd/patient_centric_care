@@ -1,4 +1,5 @@
 # Django settings for apis project.
+import local_settings
 
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
@@ -8,16 +9,7 @@ ADMINS = (
 )
 
 MANAGERS = ADMINS
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.mysql', # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
-        'NAME': 'patient_apis',                      # Or path to database file if using sqlite3.
-        'USER': 'root',                      # Not used with sqlite3.
-        'PASSWORD': 'kgMp0010',                  # Not used with sqlite3.
-        'HOST': '',                      # Set to empty string for localhost. Not used with sqlite3.
-        'PORT': '',                      # Set to empty string for default. Not used with sqlite3.
-    }
-}
+DATABASES = local_settings.DATABASES
 # Local time zone for this installation. Choices can be found here:
 # http://en.wikipedia.org/wiki/List_of_tz_zones_by_name
 # although not all choices may be available on all operating systems.
@@ -101,7 +93,7 @@ ROOT_URLCONF = 'apis.urls'
 WSGI_APPLICATION = 'apis.wsgi.application'
 
 TEMPLATE_DIRS = (
-    '/work/code/patient_centric_care/python/apis/templates',
+    local_settings.PROJECT_ROOT+'templates',
     # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
