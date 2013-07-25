@@ -15,12 +15,13 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="signinpage.png" translatesAutoresizingMaskIntoConstraints="NO" id="Ngj-f1-Lx5"/>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Aef-vX-aij">
                                 <subviews>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Email Address" clearsOnBeginEditing="YES" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="d5y-aV-Eg4">
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="User ID" clearsOnBeginEditing="YES" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="d5y-aV-Eg4">
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="jOy-uK-cMn"/>
                                             <constraint firstAttribute="width" constant="280" id="leO-4M-6K3"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Password" clearsOnBeginEditing="YES" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="eiL-6t-xVa">
@@ -28,7 +29,8 @@
                                             <constraint firstAttribute="height" constant="30" id="2FN-Ck-dDD"/>
                                             <constraint firstAttribute="width" constant="280" id="rU8-Vw-cVV"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6sw-B3-m7p">
@@ -46,7 +48,7 @@
                                         </state>
                                         <connections>
                                             <action selector="SignInUser:" destination="2" eventType="touchUpInside" id="KEx-zp-kYL"/>
-                                            <segue destination="GAb-Kg-RLu" kind="modal" id="2QQ-Xg-eDt"/>
+                                            <segue destination="GAb-Kg-RLu" kind="modal" identifier="LoginSuccessModal" modalTransitionStyle="flipHorizontal" id="UNq-pW-2oY"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -82,7 +84,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="99" y="118"/>
+            <point key="canvasLocation" x="86" y="30"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="wY3-Ih-4ei">
@@ -102,11 +104,10 @@
                             <constraint firstItem="eW9-a4-lJe" firstAttribute="top" secondItem="IDA-gB-fa0" secondAttribute="top" type="default" id="k1F-wk-dNr"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="hYk-IP-d6b"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9x6-Yu-Kgs" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="516" y="117"/>
+            <point key="canvasLocation" x="581" y="24"/>
         </scene>
     </scenes>
     <resources>

@@ -16,6 +16,20 @@
 
 @synthesize UserEmailAddress, UserPassword, SigninButton, http_client;
 
+-(void)viewWillAppear:(BOOL)animated{
+    
+    [[NSNotificationCenter defaultCenter]
+     addObserver:self
+     selector:@selector(keyboardWillShow:)
+     name:UIKeyboardWillShowNotification
+     object:nil];
+    [[NSNotificationCenter defaultCenter]
+     addObserver:self
+     selector:@selector(keyboardWillHide:)
+     name:UIKeyboardWillHideNotification
+     object:nil];
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -27,9 +41,14 @@
     // initialize the HTTP client
     self.http_client= [[HttpClient alloc]init];
     self.http_client.http_response_delegate= self;
-    NSLog(@"View did load");
     
 	// Do any additional setup after loading the view, typically from a nib.
+    
+    self.UserPassword.backgroundColor= [UIColor lightGrayColor];
+    self.UserEmailAddress.backgroundColor= [UIColor lightGrayColor];
+    self.UserPassword.borderStyle= UITextBorderStyleNone;
+    self.UserEmailAddress.borderStyle= UITextBorderStyleNone;
+    
 }
 
 - (void)didReceiveMemoryWarning
@@ -49,25 +68,22 @@
     [super touchesBegan:touches withEvent:event];
 }
 
--(void)textViewDidBeginEditing:(UITextView *)textView{
-    textView.text=@"";
+-(void)textViewDidBeginEditing:(UITextField *)textView{
     NSLog(@"View did begin editing");
     //userMessageToGale= textView;
 }
 
-- (void)textViewDidEndEditing:(UITextView *)textview {
+- (void)textViewDidEndEditing:(UITextField *)textview {
     //[self sendMessageToGale:self];
     //userMessageToGale= nil;
 }
 
-- (BOOL)textView:(UITextView *)txtView shouldChangeTextInRange:(NSRange)range replacementText:(NSString *)text {
+- (BOOL)textView:(UITextField *)txtView shouldChangeTextInRange:(NSRange)range replacementText:(NSString *)text {
     if( [text rangeOfCharacterFromSet:[NSCharacterSet newlineCharacterSet]].location == NSNotFound ) {
         return YES;
     }
     [txtView resignFirstResponder];
     [txtView endEditing:YES];
-    //[self postToServer:txtView.text];
-    txtView.text=@"You can further engage with Gale once she gets back with results";
     return NO;
 }
 
@@ -117,19 +133,20 @@
 
 
 - (IBAction)SignInUser:(id)sender {
-    
-    NSMutableDictionary * dict= [[NSMutableDictionary alloc]init];
-    [dict setObject:@"1234435345" forKey:@"username"];
-    
-    [dict setObject:@"1234" forKey:@"password"];
-    
-    
-    [self.http_client loadURL:[NSURL URLWithString:@"http://localhost:8000/api/consumer/authenticate"] with_message:dict];
+    if (!( [self.UserEmailAddress.text isEqual:@""] && ![self.UserPassword.text isEqual:@""])){
+        NSMutableDictionary * dict= [[NSMutableDictionary alloc]init];
+        [dict setObject:self.UserEmailAddress.text forKey:@"username"];
+        [dict setObject:self.UserPassword.text forKey:@"password"];
+        [self.http_client loadURL:[NSURL URLWithString:@"http://localhost:8000/api/consumer/authenticate"] with_message:dict];
+    }
 }
 
 
 -(void) processHttpResponse:(id)http_response{
-    NSLog(@"%@", http_response);
+    if ([[http_response valueForKey:@"status"]integerValue]==200){
+      [self performSegueWithIdentifier:@"LoginSuccessModal" sender:http_response];
+    }
+
 }
 
 @end

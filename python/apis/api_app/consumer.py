@@ -21,9 +21,9 @@ def add(request):
         u.set_password('1234')
         u.save()
 
-        return HttpResponse (simplejson.dumps({'status':'200 OK'}))
+        return HttpResponse (simplejson.dumps({'status':200, 'message':'OK'}))
     else:
-        return HttpResponse (simplejson.dumps({'status':'403 Forbidden'}))
+        return HttpResponse (simplejson.dumps({'status':403, 'message': 'Forbidden'}))
 
 @csrf_exempt
 def auth(request):
@@ -32,7 +32,7 @@ def auth(request):
                 password= request.POST['password'])
         if user:
             login(request, user)
-            return HttpResponse (simplejson.dumps({'status':'200 OK'}))
+            return HttpResponse (simplejson.dumps({'status':200, 'message':'OK'}))
         else:
-            return HttpResponse (simplejson.dumps({'status':'403 NOK'}))
+            return HttpResponse (simplejson.dumps({'status':403, 'message':'Forbidden'}))
 
