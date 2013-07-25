@@ -7,7 +7,16 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "HttpClient.h"
 
-@interface ViewController : UIViewController
+@interface ViewController : UIViewController <UITextFieldDelegate, UITextViewDelegate, HTTPResponseDelegate>
+@property (weak, nonatomic) IBOutlet UITextField *UserEmailAddress;
+@property (weak, nonatomic) IBOutlet UITextField *UserPassword;
+@property (weak, nonatomic) IBOutlet UIButton *SigninButton;
+
+@property(strong, nonatomic) HttpClient * http_client;
+- (IBAction)SignInUser:(id)sender;
+
+
 
 @end

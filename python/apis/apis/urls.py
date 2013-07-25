@@ -7,13 +7,8 @@ from django.conf.urls import patterns, include, url
 urlpatterns = patterns('',
     # Examples:
     url(r'^$', 'api_app.views.home', name='home'),
-    url(r'^apis/$', 'api_app.apis.home', name='home'),
-    url(r'^apis/(\d+)/careplan$', 'api_app.apis.careplan', name='home'),
-    # url(r'^apis/', include('apis.foo.urls')),
-
-    # Uncomment the admin/doc line below to enable admin documentation:
-    # url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
-
-    # Uncomment the next line to enable the admin:
-    # url(r'^admin/', include(admin.site.urls)),
-)
+    url(r'^api/$', 'api_app.apis.home', name='home'),
+    # main consumer method
+    url(r'^api/consumer/add$', 'api_app.consumer.add', name='home'),
+    url(r'^api/consumer/authenticate$', 'api_app.consumer.auth', name='home'),
+    )
