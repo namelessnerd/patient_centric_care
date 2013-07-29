@@ -48,48 +48,48 @@
                                         </state>
                                         <connections>
                                             <action selector="SignInUser:" destination="2" eventType="touchUpInside" id="KEx-zp-kYL"/>
-                                            <segue destination="GAb-Kg-RLu" kind="modal" identifier="LoginSuccessModal" modalTransitionStyle="flipHorizontal" id="UNq-pW-2oY"/>
                                         </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstItem="eiL-6t-xVa" firstAttribute="leading" secondItem="Aef-vX-aij" secondAttribute="leading" constant="10" id="FUM-CU-J9Y"/>
+                                    <constraint firstItem="eiL-6t-xVa" firstAttribute="top" secondItem="Aef-vX-aij" secondAttribute="top" constant="48" id="G9g-ZU-JyT"/>
                                     <constraint firstItem="d5y-aV-Eg4" firstAttribute="centerX" secondItem="Aef-vX-aij" secondAttribute="centerX" type="default" id="GMu-xk-bAx"/>
-                                    <constraint firstItem="d5y-aV-Eg4" firstAttribute="leading" secondItem="Aef-vX-aij" secondAttribute="leading" constant="11" id="OYr-Up-kPc"/>
+                                    <constraint firstItem="6sw-B3-m7p" firstAttribute="centerX" secondItem="eiL-6t-xVa" secondAttribute="centerX" type="default" id="Lgb-l8-Oia"/>
                                     <constraint firstItem="d5y-aV-Eg4" firstAttribute="top" secondItem="Aef-vX-aij" secondAttribute="top" constant="7" id="Q12-6E-uvh"/>
-                                    <constraint firstItem="eiL-6t-xVa" firstAttribute="top" secondItem="d5y-aV-Eg4" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="bP6-gU-fNf"/>
+                                    <constraint firstAttribute="bottom" secondItem="6sw-B3-m7p" secondAttribute="bottom" constant="6" id="fy0-m1-7bR"/>
                                     <constraint firstItem="eiL-6t-xVa" firstAttribute="baseline" secondItem="d5y-aV-Eg4" secondAttribute="baseline" type="default" id="gCY-rD-5WQ"/>
-                                    <constraint firstItem="6sw-B3-m7p" firstAttribute="top" secondItem="eiL-6t-xVa" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="uQO-p1-6dF"/>
+                                    <constraint firstItem="6sw-B3-m7p" firstAttribute="top" secondItem="Aef-vX-aij" secondAttribute="top" constant="83" scoringType="5" id="qoG-NS-sls"/>
                                     <constraint firstItem="6sw-B3-m7p" firstAttribute="centerX" secondItem="d5y-aV-Eg4" secondAttribute="centerX" type="default" id="zar-27-n1H"/>
                                 </constraints>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="Aef-vX-aij" firstAttribute="leading" secondItem="3" secondAttribute="leading" constant="8" id="8Iz-6m-1fA"/>
+                            <constraint firstItem="Aef-vX-aij" firstAttribute="top" secondItem="3" secondAttribute="top" constant="336" id="5XR-Mh-AFU"/>
                             <constraint firstItem="Ngj-f1-Lx5" firstAttribute="bottom" secondItem="3" secondAttribute="bottom" type="default" id="Lbr-I1-Gfw"/>
-                            <constraint firstItem="Aef-vX-aij" firstAttribute="top" secondItem="3" secondAttribute="top" constant="374" id="MRE-UT-alN"/>
                             <constraint firstItem="Ngj-f1-Lx5" firstAttribute="top" secondItem="3" secondAttribute="top" type="default" id="PeU-8R-Blt"/>
-                            <constraint firstAttribute="bottom" secondItem="Aef-vX-aij" secondAttribute="bottom" constant="49" id="cAj-ez-1Vw"/>
+                            <constraint firstItem="Aef-vX-aij" firstAttribute="centerX" secondItem="Ngj-f1-Lx5" secondAttribute="centerX" type="default" id="eOT-T6-FGR"/>
                             <constraint firstItem="Ngj-f1-Lx5" firstAttribute="leading" secondItem="3" secondAttribute="leading" type="default" id="oU2-ek-5VA"/>
                             <constraint firstItem="Ngj-f1-Lx5" firstAttribute="trailing" secondItem="3" secondAttribute="trailing" type="default" id="vEO-9x-oab"/>
+                            <constraint firstItem="Aef-vX-aij" firstAttribute="leading" secondItem="3" secondAttribute="leading" constant="9" id="zy4-eP-7JX"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="SigninButton" destination="6sw-B3-m7p" id="LoB-wF-5Fi"/>
                         <outlet property="UserEmailAddress" destination="d5y-aV-Eg4" id="72d-vy-zfA"/>
                         <outlet property="UserPassword" destination="eiL-6t-xVa" id="QVM-sd-tqQ"/>
+                        <segue destination="GAb-Kg-RLu" kind="modal" identifier="loginVerifySegue" id="cjJ-fB-kLi"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="86" y="30"/>
+            <point key="canvasLocation" x="18" y="0.0"/>
         </scene>
-        <!--View Controller-->
+        <!--View Deck Main Controller View Controller-->
         <scene sceneID="wY3-Ih-4ei">
             <objects>
-                <viewController id="GAb-Kg-RLu" sceneMemberID="viewController">
+                <viewController id="GAb-Kg-RLu" customClass="ViewDeckMainControllerViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="IDA-gB-fa0">
                         <rect key="frame" x="0.0" y="20" width="320" height="548"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -109,6 +109,76 @@
             </objects>
             <point key="canvasLocation" x="581" y="24"/>
         </scene>
+        <!--User Landing View Controller-->
+        <scene sceneID="WVp-vB-I36">
+            <objects>
+                <viewController storyboardIdentifier="UserLandingViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="sCh-Wj-kcz" customClass="UserLandingViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="bMv-hK-sXb">
+                        <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="linen.png" translatesAutoresizingMaskIntoConstraints="NO" id="6IO-WW-Dei"/>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kor-WC-Ptz">
+                                <items>
+                                    <navigationItem title="Title" id="kYW-4L-H3K">
+                                        <barButtonItem key="leftBarButtonItem" title="Item" id="gh1-hF-gBr">
+                                            <connections>
+                                                <action selector="showSettings:" destination="sCh-Wj-kcz" id="4Sj-SS-EfJ"/>
+                                            </connections>
+                                        </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" title="Item" id="Ow4-hw-Jdr"/>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="kor-WC-Ptz" firstAttribute="leading" secondItem="bMv-hK-sXb" secondAttribute="leading" type="default" id="4NT-8d-hLy"/>
+                            <constraint firstItem="kor-WC-Ptz" firstAttribute="trailing" secondItem="bMv-hK-sXb" secondAttribute="trailing" type="default" id="5zI-z2-RQS"/>
+                            <constraint firstItem="6IO-WW-Dei" firstAttribute="top" secondItem="bMv-hK-sXb" secondAttribute="top" constant="-450" id="GYw-UR-clY"/>
+                            <constraint firstItem="kor-WC-Ptz" firstAttribute="top" secondItem="bMv-hK-sXb" secondAttribute="top" type="default" id="QgA-HF-ht8"/>
+                            <constraint firstItem="6IO-WW-Dei" firstAttribute="leading" secondItem="bMv-hK-sXb" secondAttribute="leading" constant="-246" id="uQ5-r4-GNO"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="headerNavItem" destination="kYW-4L-H3K" id="nmF-0U-0S5"/>
+                        <outlet property="settingsButton" destination="gh1-hF-gBr" id="zS7-MT-6iQ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="z17-5j-YlN" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="112" y="715"/>
+        </scene>
+        <!--Table View Controller-->
+        <scene sceneID="A7b-KL-SXZ">
+            <objects>
+                <tableViewController storyboardIdentifier="UserSettingsViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Jlw-7F-aEe" sceneMemberID="viewController">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="R5P-4s-kKm">
+                        <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" editingAccessoryType="detailDisclosureButton" id="yg9-bE-Hk5">
+                                <rect key="frame" x="0.0" y="22" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </view>
+                                <color key="backgroundColor" red="0.32789789244186052" green="0.32789789244186052" blue="0.32789789244186052" alpha="1" colorSpace="calibratedRGB"/>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="Jlw-7F-aEe" id="qhg-Us-zHr"/>
+                            <outlet property="delegate" destination="Jlw-7F-aEe" id="nAB-t5-zuA"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7a7-5u-5gf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="618" y="704"/>
+        </scene>
     </scenes>
     <resources>
         <image name="linen.png" width="640" height="1136"/>
@@ -116,8 +186,27 @@
         <image name="signinpage.png" width="640" height="1136"/>
     </resources>
     <classes>
+        <class className="IIViewDeckController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/IIViewDeckController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="bottomController" candidateClass="UIViewController"/>
+                <relationship kind="outlet" name="centerController" candidateClass="UIViewController"/>
+                <relationship kind="outlet" name="leftController" candidateClass="UIViewController"/>
+                <relationship kind="outlet" name="panningView" candidateClass="UIView"/>
+                <relationship kind="outlet" name="rightController" candidateClass="UIViewController"/>
+                <relationship kind="outlet" name="topController" candidateClass="UIViewController"/>
+            </relationships>
+        </class>
         <class className="NSLayoutConstraint" superclassName="NSObject">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
+        </class>
+        <class className="UserLandingViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/UserLandingViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="showSettings:"/>
+                <relationship kind="outlet" name="headerNavItem" candidateClass="UINavigationItem"/>
+                <relationship kind="outlet" name="settingsButton" candidateClass="UIBarButtonItem"/>
+            </relationships>
         </class>
         <class className="ViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/ViewController.h"/>
@@ -127,6 +216,9 @@
                 <relationship kind="outlet" name="UserEmailAddress" candidateClass="UITextField"/>
                 <relationship kind="outlet" name="UserPassword" candidateClass="UITextField"/>
             </relationships>
+        </class>
+        <class className="ViewDeckMainControllerViewController" superclassName="IIViewDeckController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ViewDeckMainControllerViewController.h"/>
         </class>
     </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

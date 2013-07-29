@@ -29,6 +29,12 @@
 		DB8F757B17A083360089B018 /* app_icon144.png in Resources */ = {isa = PBXBuildFile; fileRef = DB8F757717A083360089B018 /* app_icon144.png */; };
 		DB8F757D17A0834F0089B018 /* app_icon57.png in Resources */ = {isa = PBXBuildFile; fileRef = DB8F757C17A0834F0089B018 /* app_icon57.png */; };
 		DB8F757F17A083580089B018 /* app_icon114.png in Resources */ = {isa = PBXBuildFile; fileRef = DB8F757E17A083580089B018 /* app_icon114.png */; };
+		DBA3F0F217A33B6C00584E4D /* ViewDeckMainControllerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DBA3F0F117A33B6C00584E4D /* ViewDeckMainControllerViewController.m */; };
+		DBA3F0F517A33B9B00584E4D /* IIViewDeckController.m in Sources */ = {isa = PBXBuildFile; fileRef = DBA3F0F317A33B9B00584E4D /* IIViewDeckController.m */; };
+		DBA3F0F817A33BF900584E4D /* UserLandingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DBA3F0F717A33BF900584E4D /* UserLandingViewController.m */; };
+		DBA3F0FA17A33CD600584E4D /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DBA3F0F917A33CD600584E4D /* QuartzCore.framework */; };
+		DBA3F0FC17A367E600584E4D /* monotone_cog_settings_gear.png in Resources */ = {isa = PBXBuildFile; fileRef = DBA3F0FB17A367E600584E4D /* monotone_cog_settings_gear.png */; };
+		DBC6EC1E17A2E28000759BB9 /* MyCarePlanTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DBC6EC1D17A2E28000759BB9 /* MyCarePlanTableViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -60,6 +66,16 @@
 		DB8F757717A083360089B018 /* app_icon144.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = app_icon144.png; path = ../../../images/icons/app_icon144.png; sourceTree = "<group>"; };
 		DB8F757C17A0834F0089B018 /* app_icon57.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = app_icon57.png; sourceTree = "<group>"; };
 		DB8F757E17A083580089B018 /* app_icon114.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = app_icon114.png; sourceTree = "<group>"; };
+		DBA3F0F017A33B6C00584E4D /* ViewDeckMainControllerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewDeckMainControllerViewController.h; sourceTree = "<group>"; };
+		DBA3F0F117A33B6C00584E4D /* ViewDeckMainControllerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewDeckMainControllerViewController.m; sourceTree = "<group>"; };
+		DBA3F0F317A33B9B00584E4D /* IIViewDeckController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = IIViewDeckController.m; path = ../../../../../ViewDeck/ViewDeck/IIViewDeckController.m; sourceTree = "<group>"; };
+		DBA3F0F417A33B9B00584E4D /* IIViewDeckController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IIViewDeckController.h; path = ../../../../../ViewDeck/ViewDeck/IIViewDeckController.h; sourceTree = "<group>"; };
+		DBA3F0F617A33BF900584E4D /* UserLandingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserLandingViewController.h; sourceTree = "<group>"; };
+		DBA3F0F717A33BF900584E4D /* UserLandingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserLandingViewController.m; sourceTree = "<group>"; };
+		DBA3F0F917A33CD600584E4D /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		DBA3F0FB17A367E600584E4D /* monotone_cog_settings_gear.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = monotone_cog_settings_gear.png; path = ../../../images/icons/monotone_cog_settings_gear.png; sourceTree = "<group>"; };
+		DBC6EC1C17A2E28000759BB9 /* MyCarePlanTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyCarePlanTableViewController.h; sourceTree = "<group>"; };
+		DBC6EC1D17A2E28000759BB9 /* MyCarePlanTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyCarePlanTableViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,6 +83,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DBA3F0FA17A33CD600584E4D /* QuartzCore.framework in Frameworks */,
 				DB8F7543179F6A750089B018 /* UIKit.framework in Frameworks */,
 				DB8F7545179F6A750089B018 /* Foundation.framework in Frameworks */,
 				DB8F7547179F6A750089B018 /* CoreGraphics.framework in Frameworks */,
@@ -88,6 +105,9 @@
 		DB8F7536179F6A750089B018 = {
 			isa = PBXGroup;
 			children = (
+				DBA3F0F917A33CD600584E4D /* QuartzCore.framework */,
+				DBC6EC1C17A2E28000759BB9 /* MyCarePlanTableViewController.h */,
+				DBC6EC1D17A2E28000759BB9 /* MyCarePlanTableViewController.m */,
 				DB8F757E17A083580089B018 /* app_icon114.png */,
 				DB8F757C17A0834F0089B018 /* app_icon57.png */,
 				DB8F7548179F6A750089B018 /* CarePlanApp */,
@@ -122,6 +142,12 @@
 				DB8F7551179F6A750089B018 /* AppDelegate.h */,
 				DB8F7552179F6A750089B018 /* AppDelegate.m */,
 				DB8F755A179F6A750089B018 /* MainStoryboard.storyboard */,
+				DBA3F0F617A33BF900584E4D /* UserLandingViewController.h */,
+				DBA3F0F717A33BF900584E4D /* UserLandingViewController.m */,
+				DBA3F0F017A33B6C00584E4D /* ViewDeckMainControllerViewController.h */,
+				DBA3F0F317A33B9B00584E4D /* IIViewDeckController.m */,
+				DBA3F0F417A33B9B00584E4D /* IIViewDeckController.h */,
+				DBA3F0F117A33B6C00584E4D /* ViewDeckMainControllerViewController.m */,
 				DB8F755D179F6A750089B018 /* ViewController.h */,
 				DB8F755E179F6A750089B018 /* ViewController.m */,
 				DB8F7549179F6A750089B018 /* Supporting Files */,
@@ -146,6 +172,7 @@
 		DB8F7565179F6A890089B018 /* images */ = {
 			isa = PBXGroup;
 			children = (
+				DBA3F0FB17A367E600584E4D /* monotone_cog_settings_gear.png */,
 				DB8F757417A083360089B018 /* app_icon57.png */,
 				DB8F757517A083360089B018 /* app_icon114.png */,
 				DB8F757617A083360089B018 /* app_icon114.psd */,
@@ -224,6 +251,7 @@
 				DB8F757B17A083360089B018 /* app_icon144.png in Resources */,
 				DB8F757D17A0834F0089B018 /* app_icon57.png in Resources */,
 				DB8F757F17A083580089B018 /* app_icon114.png in Resources */,
+				DBA3F0FC17A367E600584E4D /* monotone_cog_settings_gear.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -238,6 +266,10 @@
 				DB8F7553179F6A750089B018 /* AppDelegate.m in Sources */,
 				DB8F755F179F6A750089B018 /* ViewController.m in Sources */,
 				DB773F7E17A0A844001D0DCB /* HttpClient.m in Sources */,
+				DBC6EC1E17A2E28000759BB9 /* MyCarePlanTableViewController.m in Sources */,
+				DBA3F0F217A33B6C00584E4D /* ViewDeckMainControllerViewController.m in Sources */,
+				DBA3F0F517A33B9B00584E4D /* IIViewDeckController.m in Sources */,
+				DBA3F0F817A33BF900584E4D /* UserLandingViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

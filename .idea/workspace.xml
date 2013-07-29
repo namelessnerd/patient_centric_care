@@ -5,8 +5,9 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ios/code/CarePlanApp/CarePlanApp.xcodeproj/project.xcworkspace/xcuserdata/namelessnerd.xcuserdatad/UserInterfaceState.xcuserstate" afterPath="$PROJECT_DIR$/ios/code/CarePlanApp/CarePlanApp.xcodeproj/project.xcworkspace/xcuserdata/namelessnerd.xcuserdatad/UserInterfaceState.xcuserstate" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ios/code/CarePlanApp/CarePlanApp/en.lproj/MainStoryboard.storyboard" afterPath="$PROJECT_DIR$/ios/code/CarePlanApp/CarePlanApp/en.lproj/MainStoryboard.storyboard" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ios/code/CarePlanApp/CarePlanApp/ViewController.m" afterPath="$PROJECT_DIR$/ios/code/CarePlanApp/CarePlanApp/ViewController.m" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/python/apis/api_app/consumer.py" afterPath="$PROJECT_DIR$/python/apis/api_app/consumer.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/vcs.xml" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ios/code/CarePlanApp/CarePlanApp.xcodeproj/project.pbxproj" afterPath="$PROJECT_DIR$/ios/code/CarePlanApp/CarePlanApp.xcodeproj/project.pbxproj" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/python/apis/api_app/vitals.py" afterPath="$PROJECT_DIR$/python/apis/api_app/vitals.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="patient_centric_care.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -17,6 +18,8 @@
     <file path="/apis.py" changelist="709bfb21-0378-4d94-bd35-3cc10b1a71f7" time="1374614551178" ignored="false" />
     <file path="/models.py" changelist="709bfb21-0378-4d94-bd35-3cc10b1a71f7" time="1374614656061" ignored="false" />
     <file path="/consumer.py" changelist="709bfb21-0378-4d94-bd35-3cc10b1a71f7" time="1374779350918" ignored="false" />
+    <file path="/vitals.py" changelist="709bfb21-0378-4d94-bd35-3cc10b1a71f7" time="1374787558597" ignored="false" />
+    <file path="/tobedeleted" changelist="709bfb21-0378-4d94-bd35-3cc10b1a71f7" time="1374877711685" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -57,10 +60,19 @@
       <file leaf-file-name="consumer.py" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/python/apis/api_app/consumer.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="36" column="84" selection-start="1284" selection-end="1284" vertical-scroll-proportion="0.6164383">
+            <state line="10" column="19" selection-start="304" selection-end="304" vertical-scroll-proportion="0.17123288">
               <folding>
                 <element signature="e#0#17#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="vitals.py" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/python/apis/api_app/vitals.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="6" column="3" selection-start="159" selection-end="159" vertical-scroll-proportion="0.0">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -108,6 +120,8 @@
         <option value="$PROJECT_DIR$/python/apis/api_app/apis.py" />
         <option value="$PROJECT_DIR$/python/apis/api_app/models.py" />
         <option value="$PROJECT_DIR$/python/apis/api_app/consumer.py" />
+        <option value="$PROJECT_DIR$/python/apis/api_app/vitals.py" />
+        <option value="$PROJECT_DIR$/python/apis/api_app/tobedeleted" />
       </list>
     </option>
   </component>
@@ -382,13 +396,13 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="10" y="22" width="1900" height="1024" extended-state="0" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32964602" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2524272" sideWeight="0.670354" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2524272" sideWeight="0.670354" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -518,9 +532,23 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/python/apis/api_app/vitals.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="6" column="3" selection-start="159" selection-end="159" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/python/apis/api_app/tobedeleted">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="47" column="84" selection-start="3960" selection-end="4108" vertical-scroll-proportion="0.8169177">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/python/apis/api_app/consumer.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="36" column="84" selection-start="1284" selection-end="1284" vertical-scroll-proportion="0.6164383">
+        <state line="10" column="19" selection-start="304" selection-end="304" vertical-scroll-proportion="0.17123288">
           <folding>
             <element signature="e#0#17#0" expanded="true" />
           </folding>

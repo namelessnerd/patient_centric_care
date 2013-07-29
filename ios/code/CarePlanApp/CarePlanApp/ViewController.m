@@ -144,7 +144,7 @@
 
 -(void) processHttpResponse:(id)http_response{
     if ([[http_response valueForKey:@"status"]integerValue]==200){
-      [self performSegueWithIdentifier:@"LoginSuccessModal" sender:http_response];
+      [self performSegueWithIdentifier:@"loginVerifySegue" sender:http_response];
     }
 
 }

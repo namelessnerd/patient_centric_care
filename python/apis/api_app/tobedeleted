@@ -1,0 +1,49 @@
+Assigned Role Description : Prior: Identify content analysis and analytics challenges in unstructured data, develop algorithms to address them, design and prototype proof of concept solutions and contribute to Point of View around the same.
+Current: Lead problem definition, Point of View development, Proof of concept development in the area of applying data analysis and analytics to social and personalization of healthcare.
+
+Tips Value Creator
+EditAchieve buy-in for proposed changes or initiatives	Target
+1. Articulate the importance of data integration and analysis around unstructured content and the use of the same in developing a competitive intelligence dashboard solution that would enable users to sift through massive amounts of data towards gaining valuable insights.
+2. Articulate the need for a data driven approach in patient centric healthcare management, what are the potential engagements, where and how this initiative fits into the overall Digital Health Platform goals and objectives, and an aggressive timeline for PoC creation.	1. Pitch deck outlining use cases, applications, how current work can be extended to address these challenges, and how current skills are leveraged
+EditContribute to knowledge capital, new solutions or services	Target
+1. Implement novel approach for entity extraction from unstructured text using vendor solutions in conjunction with
+home grown approaches, demonstrate how semantic processing can be applied in scale to identify and correlate entities, and develop approaches for
+ interactive visualization / exploration / matching of data
+
+1. Comprehensive write up of solutions
+2. Conference publications
+3. Conference tutorials
+4. Lab lunch talks
+EditCreate re-usable solution, process or work product	Target
+1. Create service end points to interact with entity extraction solution
+2. Sophesticated ORM drivers in Python for Mongo1. Apply service oriented methodologies to enable reuse of components developed across projects and teams
+2. Easy to understand documentation
+3. Create reusable modules and connectors to interact with emerging technologies
+EditEstablish self as expert or key contributor	Target
+1. Publish points of view on new initiatives
+2. Develop proof of concepts for new initiatives
+3. Publish research papers and give conference tutorials
+4. File IP	1. PoC and PoV for competitive intelligence and patient centric healthcare
+2. 1 conference publication and 1 tutorial / talk
+TipsPeople Developer
+EditBuild skills (self or others) needed to execute responsibilities	Target
+1. Introduce and evangelize new technology platforms
+2. Write / develop tools to interact with them
+3. Have teachout sessions for project members
+4. Be available as a resource across teams in helping them with javascript, ajax, Web application architecting and development, and MongoDB	1. Mentor new jointers in technologies like JS, big data, Python
+2. Be a resource for teaching and helping in using above technologies
+EditEffectively coach/counsel others and provide feedback to improve performance	Target
+1. Help team members on task scheduling, planning task executions, and constantly work with them in better understanding of requirements as well as technologies to execute them.	1. Engage with team members in task management
+2. Engage with technology management such as using IDEs, toolkits
+EditImprove team morale/engagement	Target
+
+EditLead/participate in people initiatives	Target
+1. Be a part of and contribute to social committee activities
+2. Organize community events like Hackathons	1. Be a part of and contribute to social committee activities
+2. Organize Techlabs Hackathon
+TipsBusiness Operator
+EditReduce dependence on supervisor's input	Target
+1. Take leadership role in project / initiative specification, task assignment, PoV and PoC development
+2. Identify and mitigate problems and risks in execution
+3. Keep escalations to a minimum but escalate issues before significant disruptions	1. Define and lead initiative in social data driven patient centric healthcare
+2. Take initiative to create PoCs and PoVs and other impact materials
