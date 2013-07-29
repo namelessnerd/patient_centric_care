@@ -10,5 +10,6 @@ urlpatterns = patterns('',
     url(r'^api/$', 'api_app.apis.home', name='home'),
     # main consumer method
     url(r'^api/consumer/add$', 'api_app.consumer.add', name='home'),
+    url(r'^api/consumer/get$', 'api_app.consumer.return_consumer', name='home'),
     url(r'^api/consumer/authenticate$', 'api_app.consumer.auth', name='home'),
     )

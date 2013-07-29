@@ -15,11 +15,13 @@ class MongoConnector:
     def find(self,query, custom_fields= None, collection= None, return_cursor= False, limit= 0):
         try:
             coll= self.db[collection]
+            print query
             cur= coll.find(query, fields= custom_fields, limit= limit) if custom_fields else coll.find(query, limit= limit)
             return cur if return_cursor else [record for record in cur]
         except OperationFailure, o:
             return None
         except PyMongoError, mongo_error:
+            print 'Exception in PyMongo'
             return None
 
     def find_one(self,query, fields= None, collection= None, return_cursor= False):

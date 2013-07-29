@@ -1,0 +1,4 @@
+"id";"symbol_name";"vital_type_id";"created_at";"updated_at"
+1;"Diastolic blood pressure";6;"2013-07-04 15:07:22.281666";"2013-07-04 15:07:22.281666"
+2;"Systolic blood pressure";5;"2013-07-04 15:07:22.297291";"2013-07-04 15:07:22.297291"
+3;"Blood glucose monitors attachment:Find:Pt:^Patient:Doc::";4;"2013-07-04 15:07:22.297291";"2013-07-04 15:07:22.297291"

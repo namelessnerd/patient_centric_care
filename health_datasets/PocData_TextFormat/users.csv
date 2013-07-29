@@ -1,0 +1,7 @@
+"id";"name";"email";"created_at";"updated_at";"password_digest";"remember_token";"admin"
+1;"Angela Marinela";"angela.marinela.coord@gmail.com";"2013-07-04 15:07:20.422243";"2013-07-04 15:07:20.484745";"$2a$10$TdNNWcIJuJfZ7/nYp6m2leN8O1q4v9s7cwvFRJLDPd/CIcyiSTEkC";"zHfS_2IUv0T-VZcYOF4vFg";t
+2;"Judd Abernathy";"example-1@railstutorial.org";"2013-07-04 15:07:20.750377";"2013-07-04 15:07:20.750377";"$2a$10$lXOTbDz6HzK8oVIqkz4DhuQy7gnUHcWSig8SGeB34zvwLl/OAJyt6";"m236O3pTPBfazOQJepcbMQ";f
+3;"Margot Gulgowski";"example-2@railstutorial.org";"2013-07-04 15:07:20.859755";"2013-07-04 15:07:20.859755";"$2a$10$rP9e8x5ZaOxOrR3k0HbgCuruiwJVPSDgLd/dKpEr/e7Ky/DZ6A0wS";"TV_o98vlf_9apzneonUIyQ";f
+4;"Omer Spencer";"example-3@railstutorial.org";"2013-07-04 15:07:20.953507";"2013-07-04 15:07:20.953507";"$2a$10$6RxSshdTBf5SJ8J8/SiAm.Zm/zcF040Fg7R.s7Gxett9wz8tqgPgy";"p-K3UA28UnQrFXcBNZpiKg";f
+5;"Magali Zemlak";"example-4@railstutorial.org";"2013-07-04 15:07:21.062885";"2013-07-04 15:07:21.062885";"$2a$10$D57AGUbUzzGQg1nihz.o5OQ3bQZRSrsxUzpNuPXPIRongfo6NoJd6";"i7A_-lRJLxfooXDZKQeYJA";f
+6;"Katlynn Corwin";"example-5@railstutorial.org";"2013-07-04 15:07:21.172263";"2013-07-04 15:07:21.172263";"$2a$10$khAOJ3RCsLm3slu5qGA9xea24klJAUKqAmyMCxMdWiyyW2ry2GHDu";"CFxhwLCFkwc0mQkX6mYSQg";f
