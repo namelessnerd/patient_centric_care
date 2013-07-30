@@ -35,6 +35,7 @@
 		DBA3F0FA17A33CD600584E4D /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DBA3F0F917A33CD600584E4D /* QuartzCore.framework */; };
 		DBA3F0FC17A367E600584E4D /* monotone_cog_settings_gear.png in Resources */ = {isa = PBXBuildFile; fileRef = DBA3F0FB17A367E600584E4D /* monotone_cog_settings_gear.png */; };
 		DBC6EC1E17A2E28000759BB9 /* MyCarePlanTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DBC6EC1D17A2E28000759BB9 /* MyCarePlanTableViewController.m */; };
+		DBE8F7B317A8881B0038F41F /* button.png in Resources */ = {isa = PBXBuildFile; fileRef = DBE8F7B217A8881B0038F41F /* button.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -76,6 +77,7 @@
 		DBA3F0FB17A367E600584E4D /* monotone_cog_settings_gear.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = monotone_cog_settings_gear.png; path = ../../../images/icons/monotone_cog_settings_gear.png; sourceTree = "<group>"; };
 		DBC6EC1C17A2E28000759BB9 /* MyCarePlanTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyCarePlanTableViewController.h; sourceTree = "<group>"; };
 		DBC6EC1D17A2E28000759BB9 /* MyCarePlanTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyCarePlanTableViewController.m; sourceTree = "<group>"; };
+		DBE8F7B217A8881B0038F41F /* button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = button.png; path = ../../../images/button.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -172,6 +174,7 @@
 		DB8F7565179F6A890089B018 /* images */ = {
 			isa = PBXGroup;
 			children = (
+				DBE8F7B217A8881B0038F41F /* button.png */,
 				DBA3F0FB17A367E600584E4D /* monotone_cog_settings_gear.png */,
 				DB8F757417A083360089B018 /* app_icon57.png */,
 				DB8F757517A083360089B018 /* app_icon114.png */,
@@ -252,6 +255,7 @@
 				DB8F757D17A0834F0089B018 /* app_icon57.png in Resources */,
 				DB8F757F17A083580089B018 /* app_icon114.png in Resources */,
 				DBA3F0FC17A367E600584E4D /* monotone_cog_settings_gear.png in Resources */,
+				DBE8F7B317A8881B0038F41F /* button.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

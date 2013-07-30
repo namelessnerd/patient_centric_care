@@ -118,7 +118,7 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="linen.png" translatesAutoresizingMaskIntoConstraints="NO" id="6IO-WW-Dei"/>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sCl-Cr-YQX">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="button.png" translatesAutoresizingMaskIntoConstraints="NO" id="sCl-Cr-YQX">
                                 <constraints>
                                     <constraint firstAttribute="height" constant="250" id="JhI-SV-vYB"/>
                                     <constraint firstAttribute="width" constant="271" id="iVE-I5-MSj"/>
@@ -178,18 +178,22 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qbM-uF-Sno">
+                            <view alpha="0.50000000000000011" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qbM-uF-Sno">
                                 <subviews>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Swipe up for Dashboard" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hmT-wm-O8a">
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="21" id="XGo-Kf-yVE"/>
+                                            <constraint firstAttribute="width" constant="149" id="nww-ux-nqD"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-UltraLight" family="Helvetica Neue" pointSize="15"/>
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" red="0.74117648601531982" green="0.90196084976196289" blue="0.93725496530532837" alpha="1" colorSpace="deviceRGB"/>
                                 <constraints>
-                                    <constraint firstItem="hmT-wm-O8a" firstAttribute="centerX" secondItem="qbM-uF-Sno" secondAttribute="centerX" type="default" id="abY-bM-maO"/>
-                                    <constraint firstItem="hmT-wm-O8a" firstAttribute="top" secondItem="qbM-uF-Sno" secondAttribute="top" constant="8" id="uKo-fS-kQ8"/>
+                                    <constraint firstItem="hmT-wm-O8a" firstAttribute="centerX" secondItem="qbM-uF-Sno" secondAttribute="centerX" type="default" id="4l7-1U-3Zh"/>
+                                    <constraint firstItem="hmT-wm-O8a" firstAttribute="top" secondItem="qbM-uF-Sno" secondAttribute="top" type="default" id="T3A-Yu-35C"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -203,7 +207,7 @@
                             <constraint firstItem="sCl-Cr-YQX" firstAttribute="top" secondItem="ZMJ-dz-RbB" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="SZi-m6-uxf"/>
                             <constraint firstItem="qbM-uF-Sno" firstAttribute="trailing" secondItem="bMv-hK-sXb" secondAttribute="trailing" type="default" id="ZiV-li-Rpf"/>
                             <constraint firstItem="ZMJ-dz-RbB" firstAttribute="leading" secondItem="bMv-hK-sXb" secondAttribute="leading" constant="109" id="fXT-41-Q3Y"/>
-                            <constraint firstItem="qbM-uF-Sno" firstAttribute="top" secondItem="bMv-hK-sXb" secondAttribute="top" constant="468" id="izV-Gu-mOa"/>
+                            <constraint firstItem="qbM-uF-Sno" firstAttribute="top" secondItem="bMv-hK-sXb" secondAttribute="top" constant="482" id="iPp-N6-ll5"/>
                             <constraint firstItem="qbM-uF-Sno" firstAttribute="leading" secondItem="bMv-hK-sXb" secondAttribute="leading" type="default" id="nlt-v3-UiT"/>
                             <constraint firstItem="sCl-Cr-YQX" firstAttribute="centerX" secondItem="jpZ-aY-f7x" secondAttribute="centerX" type="default" id="stH-UJ-WMZ"/>
                             <constraint firstItem="6IO-WW-Dei" firstAttribute="leading" secondItem="bMv-hK-sXb" secondAttribute="leading" constant="-246" id="uQ5-r4-GNO"/>
@@ -337,6 +341,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="button.png" width="542" height="500"/>
         <image name="linen.png" width="640" height="1136"/>
         <image name="signin.png" width="234" height="72"/>
         <image name="signinpage.png" width="640" height="1136"/>
