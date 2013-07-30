@@ -21,6 +21,7 @@
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
+        self.viewDeckController.leftSize= 100.0;
         // Custom initialization
     }
     return self;
@@ -29,6 +30,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+     [self.navigationController.navigationBar setTintColor:[UIColor colorWithRed:61.0/255.0 green:65.0/255.0 blue:66.0/255.0 alpha:1]];
+    self.navigationItem.title= @"My Care";
 //    self.headerNavItem.
 	// Do any additional setup after loading the view.
 }
@@ -40,6 +43,7 @@
 }
 
 - (IBAction)showSettings:(id)sender {
-     [self.viewDeckController toggleLeftViewAnimated:YES];
+    
+    [self.viewDeckController toggleLeftViewAnimated:YES];
 }
 @end

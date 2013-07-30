@@ -21,6 +21,7 @@
     
 
     if (self) {
+        self.viewDeckController.leftSize= 100.0;
         // Add any extra init code here
     }
     return self;
