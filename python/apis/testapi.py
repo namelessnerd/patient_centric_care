@@ -16,4 +16,4 @@ with open('/work/code/patient_centric_care/health_datasets/ptrd/training_SyncPat
         del row['state']
         del row['dmi']
         data= simplejson.dumps(row)
-        requests.post('http://localhost:8000/api/consumer/add', data= data, headers= {'content-type': 'application/json'})
+        requests.post('http://ec2-75-101-230-124.compute-1.amazonaws.com/api/consumer/add', data= data, headers= {'content-type': 'application/json'})

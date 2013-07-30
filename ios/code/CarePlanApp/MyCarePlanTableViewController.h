@@ -9,5 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface MyCarePlanTableViewController : UITableViewController
+@property (strong, nonatomic) IBOutlet UITableView *myCarePlanSettingsTableView;
 
 @end

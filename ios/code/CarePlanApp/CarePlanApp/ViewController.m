@@ -33,10 +33,9 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
+
     // border and stuff for email and password
     
-
     
     // initialize the HTTP client
     self.http_client= [[HttpClient alloc]init];
@@ -133,12 +132,13 @@
 
 
 - (IBAction)SignInUser:(id)sender {
-    if (!( [self.UserEmailAddress.text isEqual:@""] && ![self.UserPassword.text isEqual:@""])){
-        NSMutableDictionary * dict= [[NSMutableDictionary alloc]init];
-        [dict setObject:self.UserEmailAddress.text forKey:@"username"];
-        [dict setObject:self.UserPassword.text forKey:@"password"];
-        [self.http_client loadURL:[NSURL URLWithString:@"http://localhost:8000/api/consumer/authenticate"] with_message:dict];
-    }
+    [self performSegueWithIdentifier:@"loginVerifySegue" sender:sender];
+//    if (!( [self.UserEmailAddress.text isEqual:@""] && ![self.UserPassword.text isEqual:@""])){
+//        NSMutableDictionary * dict= [[NSMutableDictionary alloc]init];
+//        [dict setObject:self.UserEmailAddress.text forKey:@"username"];
+//        [dict setObject:self.UserPassword.text forKey:@"password"];
+//        [self.http_client loadURL:[NSURL URLWithString:@"http://localhost:8000/api/consumer/authenticate"] with_message:dict];
+//    }
 }
 
 
