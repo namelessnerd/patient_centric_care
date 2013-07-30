@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		DB2AC85817A88522008D4345 /* button.png in Resources */ = {isa = PBXBuildFile; fileRef = DB2AC85717A88522008D4345 /* button.png */; };
 		DB773F7E17A0A844001D0DCB /* HttpClient.m in Sources */ = {isa = PBXBuildFile; fileRef = DB773F7D17A0A844001D0DCB /* HttpClient.m */; };
 		DB8F7543179F6A750089B018 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB8F7542179F6A750089B018 /* UIKit.framework */; };
 		DB8F7545179F6A750089B018 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB8F7544179F6A750089B018 /* Foundation.framework */; };
@@ -39,7 +38,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		DB2AC85717A88522008D4345 /* button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = button.png; path = ../../../images/button.png; sourceTree = "<group>"; };
 		DB773F7C17A0A844001D0DCB /* HttpClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HttpClient.h; sourceTree = "<group>"; };
 		DB773F7D17A0A844001D0DCB /* HttpClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HttpClient.m; sourceTree = "<group>"; };
 		DB8F753F179F6A750089B018 /* CarePlanApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CarePlanApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -174,7 +172,6 @@
 		DB8F7565179F6A890089B018 /* images */ = {
 			isa = PBXGroup;
 			children = (
-				DB2AC85717A88522008D4345 /* button.png */,
 				DBA3F0FB17A367E600584E4D /* monotone_cog_settings_gear.png */,
 				DB8F757417A083360089B018 /* app_icon57.png */,
 				DB8F757517A083360089B018 /* app_icon114.png */,
@@ -255,7 +252,6 @@
 				DB8F757D17A0834F0089B018 /* app_icon57.png in Resources */,
 				DB8F757F17A083580089B018 /* app_icon114.png in Resources */,
 				DBA3F0FC17A367E600584E4D /* monotone_cog_settings_gear.png in Resources */,
-				DB2AC85817A88522008D4345 /* button.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
