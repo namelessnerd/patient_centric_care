@@ -228,7 +228,6 @@
         <!--My Care Plan Table View Controller-->
         <scene sceneID="A7b-KL-SXZ">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="7a7-5u-5gf" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tableViewController storyboardIdentifier="" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Jlw-7F-aEe" customClass="MyCarePlanTableViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" indicatorStyle="black" dataMode="static" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="R5P-4s-kKm">
                         <rect key="frame" x="0.0" y="64" width="320" height="504"/>
@@ -296,6 +295,7 @@
                     </tableView>
                     <navigationItem key="navigationItem" id="ITf-Gw-VIA"/>
                 </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7a7-5u-5gf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1547" y="715"/>
         </scene>
