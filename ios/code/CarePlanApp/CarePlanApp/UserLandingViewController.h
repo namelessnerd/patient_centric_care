@@ -11,6 +11,10 @@
 @interface UserLandingViewController : UIViewController
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *settingsButton;
 - (IBAction)showSettings:(id)sender;
-@property (weak, nonatomic) IBOutlet UINavigationItem *headerNavItem;
+
+@property (weak, nonatomic) IBOutlet UILabel *nextActionLabel;
+@property (weak, nonatomic) IBOutlet UILabel *nextActionTime;
+@property (weak, nonatomic) IBOutlet UIImageView *checkinButton;
+@property (weak, nonatomic) IBOutlet UILabel *nextActionUnit;
 
 @end
