@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DB14E5CA17A892E9002BFBD2 /* checkmark.png in Resources */ = {isa = PBXBuildFile; fileRef = DB14E5C917A892E9002BFBD2 /* checkmark.png */; };
+		DB14E5CE17A9830B002BFBD2 /* CheckInHistoryManager.m in Sources */ = {isa = PBXBuildFile; fileRef = DB14E5CD17A9830B002BFBD2 /* CheckInHistoryManager.m */; };
+		DB14E5D117A98341002BFBD2 /* CheckIn.m in Sources */ = {isa = PBXBuildFile; fileRef = DB14E5D017A98341002BFBD2 /* CheckIn.m */; };
 		DB773F7E17A0A844001D0DCB /* HttpClient.m in Sources */ = {isa = PBXBuildFile; fileRef = DB773F7D17A0A844001D0DCB /* HttpClient.m */; };
 		DB8F7543179F6A750089B018 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB8F7542179F6A750089B018 /* UIKit.framework */; };
 		DB8F7545179F6A750089B018 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB8F7544179F6A750089B018 /* Foundation.framework */; };
@@ -39,6 +42,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		DB14E5C917A892E9002BFBD2 /* checkmark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = checkmark.png; path = ../../../images/checkmark.png; sourceTree = "<group>"; };
+		DB14E5CC17A9830B002BFBD2 /* CheckInHistoryManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CheckInHistoryManager.h; sourceTree = "<group>"; };
+		DB14E5CD17A9830B002BFBD2 /* CheckInHistoryManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CheckInHistoryManager.m; sourceTree = "<group>"; };
+		DB14E5CF17A98341002BFBD2 /* CheckIn.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CheckIn.h; sourceTree = "<group>"; };
+		DB14E5D017A98341002BFBD2 /* CheckIn.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CheckIn.m; sourceTree = "<group>"; };
 		DB773F7C17A0A844001D0DCB /* HttpClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HttpClient.h; sourceTree = "<group>"; };
 		DB773F7D17A0A844001D0DCB /* HttpClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HttpClient.m; sourceTree = "<group>"; };
 		DB8F753F179F6A750089B018 /* CarePlanApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CarePlanApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -95,6 +103,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		DB14E5CB17A982DB002BFBD2 /* CheckInHistoryManager */ = {
+			isa = PBXGroup;
+			children = (
+				DB14E5CC17A9830B002BFBD2 /* CheckInHistoryManager.h */,
+				DB14E5CD17A9830B002BFBD2 /* CheckInHistoryManager.m */,
+				DB14E5CF17A98341002BFBD2 /* CheckIn.h */,
+				DB14E5D017A98341002BFBD2 /* CheckIn.m */,
+			);
+			name = CheckInHistoryManager;
+			sourceTree = "<group>";
+		};
 		DB773F7B17A0A81B001D0DCB /* HTTPClient */ = {
 			isa = PBXGroup;
 			children = (
@@ -139,6 +158,7 @@
 		DB8F7548179F6A750089B018 /* CarePlanApp */ = {
 			isa = PBXGroup;
 			children = (
+				DB14E5CB17A982DB002BFBD2 /* CheckInHistoryManager */,
 				DB773F7B17A0A81B001D0DCB /* HTTPClient */,
 				DB8F7565179F6A890089B018 /* images */,
 				DB8F7551179F6A750089B018 /* AppDelegate.h */,
@@ -174,6 +194,7 @@
 		DB8F7565179F6A890089B018 /* images */ = {
 			isa = PBXGroup;
 			children = (
+				DB14E5C917A892E9002BFBD2 /* checkmark.png */,
 				DBE8F7B217A8881B0038F41F /* button.png */,
 				DBA3F0FB17A367E600584E4D /* monotone_cog_settings_gear.png */,
 				DB8F757417A083360089B018 /* app_icon57.png */,
@@ -256,6 +277,7 @@
 				DB8F757F17A083580089B018 /* app_icon114.png in Resources */,
 				DBA3F0FC17A367E600584E4D /* monotone_cog_settings_gear.png in Resources */,
 				DBE8F7B317A8881B0038F41F /* button.png in Resources */,
+				DB14E5CA17A892E9002BFBD2 /* checkmark.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -274,6 +296,8 @@
 				DBA3F0F217A33B6C00584E4D /* ViewDeckMainControllerViewController.m in Sources */,
 				DBA3F0F517A33B9B00584E4D /* IIViewDeckController.m in Sources */,
 				DBA3F0F817A33BF900584E4D /* UserLandingViewController.m in Sources */,
+				DB14E5CE17A9830B002BFBD2 /* CheckInHistoryManager.m in Sources */,
+				DB14E5D117A98341002BFBD2 /* CheckIn.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

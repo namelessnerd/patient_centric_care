@@ -311,8 +311,8 @@
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
                                         <constraints>
-                                            <constraint firstItem="AXb-ZE-3Rh" firstAttribute="top" secondItem="7Fg-aa-ynQ" secondAttribute="top" constant="11" id="56r-iX-NdO"/>
-                                            <constraint firstItem="AXb-ZE-3Rh" firstAttribute="leading" secondItem="7Fg-aa-ynQ" secondAttribute="leading" constant="10" id="fEF-Bg-bfg"/>
+                                            <constraint firstItem="AXb-ZE-3Rh" firstAttribute="top" secondItem="7Fg-aa-ynQ" secondAttribute="top" constant="9" id="374-9v-wYq"/>
+                                            <constraint firstItem="AXb-ZE-3Rh" firstAttribute="leading" secondItem="7Fg-aa-ynQ" secondAttribute="leading" constant="7" id="Rxi-J8-Nti"/>
                                         </constraints>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" indentationWidth="10" id="imk-zx-3m8">
@@ -325,7 +325,6 @@
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Dashboard" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Vm-8E-dxM">
                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" constant="26" id="EdR-zU-q8w"/>
                                                         <constraint firstAttribute="width" constant="155" id="dX7-1i-uLM"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="29"/>
@@ -336,8 +335,51 @@
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
                                         <constraints>
-                                            <constraint firstItem="5Vm-8E-dxM" firstAttribute="centerY" secondItem="imk-zx-3m8" secondAttribute="centerY" type="default" id="KcJ-2c-afz"/>
+                                            <constraint firstItem="5Vm-8E-dxM" firstAttribute="top" secondItem="imk-zx-3m8" secondAttribute="top" constant="9" id="rdr-FT-r5c"/>
                                             <constraint firstItem="5Vm-8E-dxM" firstAttribute="leading" secondItem="imk-zx-3m8" secondAttribute="leading" constant="7" id="zap-ym-nOA"/>
+                                        </constraints>
+                                    </tableViewCell>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" indentationWidth="10" id="rWW-0R-xaJ">
+                                        <rect key="frame" x="0.0" y="88" width="320" height="44"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="My Care Plan" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4oY-kQ-kRK">
+                                                    <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="29"/>
+                                                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </label>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                        <constraints>
+                                            <constraint firstItem="4oY-kQ-kRK" firstAttribute="leading" secondItem="rWW-0R-xaJ" secondAttribute="leading" constant="7" id="YTL-7W-bIm"/>
+                                            <constraint firstItem="4oY-kQ-kRK" firstAttribute="top" secondItem="rWW-0R-xaJ" secondAttribute="top" constant="9" id="gim-3g-aSd"/>
+                                        </constraints>
+                                    </tableViewCell>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" indentationWidth="10" id="8ru-fn-08M">
+                                        <rect key="frame" x="0.0" y="132" width="320" height="44"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="My Connected Apps" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vvQ-nt-HJS">
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="267" id="fXE-p1-E4W"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="29"/>
+                                                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </label>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                        <constraints>
+                                            <constraint firstItem="vvQ-nt-HJS" firstAttribute="top" secondItem="8ru-fn-08M" secondAttribute="top" constant="9" id="1tt-xW-kFS"/>
+                                            <constraint firstItem="vvQ-nt-HJS" firstAttribute="leading" secondItem="8ru-fn-08M" secondAttribute="leading" constant="7" id="Ylw-JS-sSV"/>
                                         </constraints>
                                     </tableViewCell>
                                 </cells>
@@ -425,6 +467,7 @@
                 <relationship kind="outlet" name="checkinButton" candidateClass="UIImageView"/>
                 <relationship kind="outlet" name="nextActionLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="nextActionTime" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="nextActionUnit" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="settingsButton" candidateClass="UIBarButtonItem"/>
             </relationships>
         </class>
