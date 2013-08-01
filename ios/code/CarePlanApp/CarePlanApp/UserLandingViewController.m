@@ -34,6 +34,7 @@
     [super viewDidLoad];
      [self.navigationController.navigationBar setTintColor:[UIColor colorWithRed:61.0/255.0 green:65.0/255.0 blue:66.0/255.0 alpha:1]];
     self.navigationItem.title= @"My Care";
+ 
     
     // add click for checkin button
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(createCheckin:)];
@@ -62,9 +63,13 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (IBAction)showSettings:(id)sender {
-    
+-(void) pushSettings{
     [self.viewDeckController toggleLeftViewAnimated:YES];
+}
+
+- (IBAction)showSettings:(id)sender {
+    [self pushSettings];
+    
 }
 
 -(void) nextActionText:(NSArray *)nText{

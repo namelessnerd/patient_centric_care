@@ -128,7 +128,7 @@
      // Pass the selected object to the new view controller.
      [self.navigationController pushViewController:detailViewController animated:YES];
      */
-    [self performSegueWithIdentifier:@"showConnectedServicesSegue" sender:self];
+    [self performSegueWithIdentifier:@"showConnectedServicesSegue" sender:self.parentViewController];
 }
 
 @end

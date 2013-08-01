@@ -196,19 +196,19 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Zfb-ki-qeP">
-                        <barButtonItem key="leftBarButtonItem" title="Item" id="gh1-hF-gBr">
-                            <connections>
-                                <action selector="showSettings:" destination="sCh-Wj-kcz" id="4Sj-SS-EfJ"/>
-                            </connections>
+                        <barButtonItem key="leftBarButtonItem" image="top_left.png" style="plain" id="gh1-hF-gBr">
+                            <inset key="imageInsets" minX="-10" minY="0.0" maxX="-10" maxY="0.0"/>
+                            <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="Item" id="Ow4-hw-Jdr"/>
+                        <barButtonItem key="rightBarButtonItem" image="top_right_person.png" id="Ow4-hw-Jdr">
+                            <inset key="imageInsets" minX="-10" minY="0.0" maxX="-10" maxY="0.0"/>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="checkinButton" destination="sCl-Cr-YQX" id="D8R-r0-CA4"/>
                         <outlet property="nextActionLabel" destination="ZMJ-dz-RbB" id="Ncd-57-EpU"/>
                         <outlet property="nextActionTime" destination="lkP-q7-Jva" id="6Ii-i0-fhr"/>
                         <outlet property="nextActionUnit" destination="wh5-zg-gOj" id="Saa-BF-uU1"/>
-                        <outlet property="settingsButton" destination="gh1-hF-gBr" id="zS7-MT-6iQ"/>
                         <outlet property="userCheckInHistory" destination="jpZ-aY-f7x" id="2J8-ZP-ngz"/>
                     </connections>
                 </viewController>
@@ -257,7 +257,6 @@
                             <constraint firstItem="4QT-Vi-qPa" firstAttribute="top" secondItem="eth-7g-J5Q" secondAttribute="top" constant="-158" id="cF7-BF-sY6"/>
                             <constraint firstItem="5r9-3h-j35" firstAttribute="leading" secondItem="eth-7g-J5Q" secondAttribute="leading" constant="114" id="fQK-LO-gyE"/>
                             <constraint firstItem="oqr-ur-ZTP" firstAttribute="leading" secondItem="5r9-3h-j35" secondAttribute="leading" type="default" id="iWu-G6-X9g"/>
-                            <constraint firstItem="oqr-ur-ZTP" firstAttribute="top" secondItem="5r9-3h-j35" secondAttribute="top" type="default" id="sPo-2T-cV3"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="1lc-lz-jxS"/>
@@ -430,6 +429,8 @@
         <image name="linen.png" width="640" height="1136"/>
         <image name="signin.png" width="234" height="72"/>
         <image name="signinpage.png" width="640" height="1136"/>
+        <image name="top_left.png" width="40" height="40"/>
+        <image name="top_right_person.png" width="40" height="40"/>
     </resources>
     <classes>
         <class className="ConnectedServicesViewController" superclassName="UIViewController">
