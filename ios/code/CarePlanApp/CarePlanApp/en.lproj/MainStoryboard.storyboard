@@ -210,34 +210,64 @@
                         <outlet property="nextActionUnit" destination="wh5-zg-gOj" id="Saa-BF-uU1"/>
                         <outlet property="settingsButton" destination="gh1-hF-gBr" id="zS7-MT-6iQ"/>
                         <outlet property="userCheckInHistory" destination="jpZ-aY-f7x" id="2J8-ZP-ngz"/>
-                        <segue destination="PSQ-1B-fxO" kind="modal" identifier="userCheckinSegue" id="GIy-Jn-BOB"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="z17-5j-YlN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="654" y="709"/>
         </scene>
-        <!--View Controller-->
+        <!--Connected Services View Controller-->
         <scene sceneID="jRs-AI-dg0">
             <objects>
-                <viewController id="PSQ-1B-fxO" sceneMemberID="viewController">
+                <viewController id="PSQ-1B-fxO" customClass="ConnectedServicesViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="eth-7g-J5Q">
                         <rect key="frame" x="0.0" y="20" width="320" height="548"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="linen.png" translatesAutoresizingMaskIntoConstraints="NO" id="4QT-Vi-qPa"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5r9-3h-j35">
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Go Back">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oqr-ur-ZTP">
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Go Back">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="backClick:" destination="PSQ-1B-fxO" eventType="touchUpInside" id="GWk-in-RlV"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="4QT-Vi-qPa" firstAttribute="leading" secondItem="eth-7g-J5Q" secondAttribute="leading" constant="-170" id="4iS-Qa-M0a"/>
+                            <constraint firstItem="oqr-ur-ZTP" firstAttribute="baseline" secondItem="5r9-3h-j35" secondAttribute="baseline" type="default" id="8jH-Kg-Je8"/>
+                            <constraint firstItem="oqr-ur-ZTP" firstAttribute="top" secondItem="eth-7g-J5Q" secondAttribute="top" constant="143" id="Iq9-hm-L7B"/>
+                            <constraint firstItem="5r9-3h-j35" firstAttribute="centerX" secondItem="4QT-Vi-qPa" secondAttribute="centerX" type="default" id="Xeg-ij-Se4"/>
                             <constraint firstItem="4QT-Vi-qPa" firstAttribute="top" secondItem="eth-7g-J5Q" secondAttribute="top" constant="-158" id="cF7-BF-sY6"/>
+                            <constraint firstItem="5r9-3h-j35" firstAttribute="leading" secondItem="eth-7g-J5Q" secondAttribute="leading" constant="114" id="fQK-LO-gyE"/>
+                            <constraint firstItem="oqr-ur-ZTP" firstAttribute="leading" secondItem="5r9-3h-j35" secondAttribute="leading" type="default" id="iWu-G6-X9g"/>
+                            <constraint firstItem="oqr-ur-ZTP" firstAttribute="top" secondItem="5r9-3h-j35" secondAttribute="top" type="default" id="sPo-2T-cV3"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="1lc-lz-jxS"/>
+                    <connections>
+                        <outlet property="backButton" destination="oqr-ur-ZTP" id="FyL-ub-DLy"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BMf-aD-S7K" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1079" y="715"/>
+            <point key="canvasLocation" x="1027" y="1368"/>
         </scene>
         <!--My Care Plan Table View Controller-->
         <scene sceneID="A7b-KL-SXZ">
@@ -350,6 +380,9 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="ITf-Gw-VIA"/>
+                    <connections>
+                        <segue destination="PSQ-1B-fxO" kind="modal" identifier="showConnectedServicesSegue" id="s0h-4Q-Msv"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7a7-5u-5gf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -398,6 +431,59 @@
         <image name="signin.png" width="234" height="72"/>
         <image name="signinpage.png" width="640" height="1136"/>
     </resources>
+    <classes>
+        <class className="ConnectedServicesViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ConnectedServicesViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="backClick:"/>
+                <relationship kind="outlet" name="backButton" candidateClass="UIButton"/>
+            </relationships>
+        </class>
+        <class className="IIViewDeckController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/IIViewDeckController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="bottomController" candidateClass="UIViewController"/>
+                <relationship kind="outlet" name="centerController" candidateClass="UIViewController"/>
+                <relationship kind="outlet" name="leftController" candidateClass="UIViewController"/>
+                <relationship kind="outlet" name="panningView" candidateClass="UIView"/>
+                <relationship kind="outlet" name="rightController" candidateClass="UIViewController"/>
+                <relationship kind="outlet" name="topController" candidateClass="UIViewController"/>
+            </relationships>
+        </class>
+        <class className="MyCarePlanTableViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/MyCarePlanTableViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="myCarePlanSettingsTableView" candidateClass="UITableView"/>
+            </relationships>
+        </class>
+        <class className="NSLayoutConstraint" superclassName="NSObject">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
+        </class>
+        <class className="UserLandingViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/UserLandingViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="showSettings:"/>
+                <relationship kind="outlet" name="checkinButton" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="nextActionLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="nextActionTime" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="nextActionUnit" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="settingsButton" candidateClass="UIBarButtonItem"/>
+                <relationship kind="outlet" name="userCheckInHistory" candidateClass="UITableView"/>
+            </relationships>
+        </class>
+        <class className="ViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="SignInUser:"/>
+                <relationship kind="outlet" name="SigninButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="UserEmailAddress" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="UserPassword" candidateClass="UITextField"/>
+            </relationships>
+        </class>
+        <class className="ViewDeckMainControllerViewController" superclassName="IIViewDeckController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ViewDeckMainControllerViewController.h"/>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

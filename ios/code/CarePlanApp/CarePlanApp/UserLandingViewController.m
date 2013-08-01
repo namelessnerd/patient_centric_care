@@ -146,4 +146,11 @@
     [cell setBackgroundColor:[UIColor clearColor]];
 }
 
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    
+}
+
+
+
 @end

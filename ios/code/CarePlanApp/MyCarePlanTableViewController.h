@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "IIViewDeckController.h"
 
 @interface MyCarePlanTableViewController : UITableViewController
 @property (strong, nonatomic) IBOutlet UITableView *myCarePlanSettingsTableView;
