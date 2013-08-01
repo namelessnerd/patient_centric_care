@@ -19,6 +19,23 @@
 
 @synthesize nextActionLabel, nextActionTime, checkinButton, nextActionUnit, userCheckInHistory;
 
+
+-(void) addBarButtonItemsToNavBar:(bool)isLeft usingImage:(NSString *)buttonImageName{
+    UIImage* image3 = [UIImage imageNamed:buttonImageName];
+    CGRect frameimg = CGRectMake(0, 0, image3.size.width, image3.size.height);
+    UIButton *someButton = [[UIButton alloc] initWithFrame:frameimg];
+    [someButton setBackgroundImage:image3 forState:UIControlStateNormal];
+    [someButton addTarget:self action:@selector(pushSettings)
+         forControlEvents:UIControlEventTouchUpInside];
+    [someButton setShowsTouchWhenHighlighted:YES];
+    
+    UIBarButtonItem *mailbutton =[[UIBarButtonItem alloc] initWithCustomView:someButton];
+    if (isLeft)
+        self.navigationItem.leftBarButtonItem=mailbutton;
+    else
+        self.navigationItem.rightBarButtonItem=mailbutton;
+}
+
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -35,7 +52,8 @@
      [self.navigationController.navigationBar setTintColor:[UIColor colorWithRed:61.0/255.0 green:65.0/255.0 blue:66.0/255.0 alpha:1]];
     self.navigationItem.title= @"My Care";
  
-    
+    [self addBarButtonItemsToNavBar:true usingImage:@"top_left.png"];
+    [self addBarButtonItemsToNavBar:false usingImage:@"top_right_person.png"];
     // add click for checkin button
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(createCheckin:)];
     [self.checkinButton addGestureRecognizer:tap];
@@ -106,7 +124,11 @@
                         self.checkinButton.image = [UIImage imageNamed:@"checkmark.png"];
                     } completion:NULL];
     
+    [[CheckInHistoryManager getUserCheckinHistoryManager] addCheckin:[[CheckIn alloc]initWithCheckInTask:@"Morning walk for 20 minutes" AndCheckInStatus:false]];
+    
     [[self userCheckInHistory]reloadData];
+    
+    
    
 //    NSIndexPath *newIndexPath = [NSIndexPath indexPathForRow:[[[CheckInHistoryManager getUserCheckinHistoryManager]userCheckIns]count] inSection:0];
 //

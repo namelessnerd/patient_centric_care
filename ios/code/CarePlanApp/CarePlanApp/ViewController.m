@@ -35,7 +35,7 @@
     [super viewDidLoad];
 
     // border and stuff for email and password
-    
+     self.navigationController.navigationBarHidden = YES;
     
     // initialize the HTTP client
     self.http_client= [[HttpClient alloc]init];
