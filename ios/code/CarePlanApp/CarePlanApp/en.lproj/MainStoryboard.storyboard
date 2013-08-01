@@ -124,54 +124,12 @@
                                     <constraint firstAttribute="width" constant="271" id="iVE-I5-MSj"/>
                                 </constraints>
                             </imageView>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="jpZ-aY-f7x">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" indicatorStyle="black" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="jpZ-aY-f7x">
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="138" id="KFT-H6-kwN"/>
                                     <constraint firstAttribute="width" constant="276" id="Thu-7L-erh"/>
                                 </constraints>
-                                <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" indentationWidth="10" id="p08-mG-ARD">
-                                        <rect key="frame" x="0.0" y="22" width="276" height="44"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="276" height="43"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Current Score: 42" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CaF-4L-MIY">
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                    <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                </label>
-                                            </subviews>
-                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                        </view>
-                                        <constraints>
-                                            <constraint firstItem="CaF-4L-MIY" firstAttribute="leading" secondItem="p08-mG-ARD" secondAttribute="leading" constant="44" id="VTs-a5-B91"/>
-                                            <constraint firstItem="CaF-4L-MIY" firstAttribute="top" secondItem="p08-mG-ARD" secondAttribute="top" constant="11" id="c8a-yx-F0k"/>
-                                        </constraints>
-                                    </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" indentationWidth="10" id="nkb-0l-OYW">
-                                        <rect key="frame" x="0.0" y="66" width="276" height="44"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="276" height="43"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tg3-zk-AJr">
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                    <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                </label>
-                                            </subviews>
-                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                        </view>
-                                        <constraints>
-                                            <constraint firstItem="Tg3-zk-AJr" firstAttribute="top" secondItem="nkb-0l-OYW" secondAttribute="top" constant="11" id="Uev-2d-Hjv"/>
-                                            <constraint firstItem="Tg3-zk-AJr" firstAttribute="leading" secondItem="nkb-0l-OYW" secondAttribute="leading" constant="44" id="mXg-IP-qhp"/>
-                                        </constraints>
-                                    </tableViewCell>
-                                </prototypes>
                             </tableView>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Take Tylenol" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZMJ-dz-RbB">
                                 <color key="backgroundColor" red="0.46274513006210327" green="0.50980395078659058" blue="0.5215686559677124" alpha="1" colorSpace="deviceRGB"/>
@@ -251,6 +209,7 @@
                         <outlet property="nextActionTime" destination="lkP-q7-Jva" id="6Ii-i0-fhr"/>
                         <outlet property="nextActionUnit" destination="wh5-zg-gOj" id="Saa-BF-uU1"/>
                         <outlet property="settingsButton" destination="gh1-hF-gBr" id="zS7-MT-6iQ"/>
+                        <outlet property="userCheckInHistory" destination="jpZ-aY-f7x" id="2J8-ZP-ngz"/>
                         <segue destination="PSQ-1B-fxO" kind="modal" identifier="userCheckinSegue" id="GIy-Jn-BOB"/>
                     </connections>
                 </viewController>
@@ -439,51 +398,6 @@
         <image name="signin.png" width="234" height="72"/>
         <image name="signinpage.png" width="640" height="1136"/>
     </resources>
-    <classes>
-        <class className="IIViewDeckController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/IIViewDeckController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="bottomController" candidateClass="UIViewController"/>
-                <relationship kind="outlet" name="centerController" candidateClass="UIViewController"/>
-                <relationship kind="outlet" name="leftController" candidateClass="UIViewController"/>
-                <relationship kind="outlet" name="panningView" candidateClass="UIView"/>
-                <relationship kind="outlet" name="rightController" candidateClass="UIViewController"/>
-                <relationship kind="outlet" name="topController" candidateClass="UIViewController"/>
-            </relationships>
-        </class>
-        <class className="MyCarePlanTableViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/MyCarePlanTableViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="myCarePlanSettingsTableView" candidateClass="UITableView"/>
-            </relationships>
-        </class>
-        <class className="NSLayoutConstraint" superclassName="NSObject">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
-        </class>
-        <class className="UserLandingViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/UserLandingViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="showSettings:"/>
-                <relationship kind="outlet" name="checkinButton" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="nextActionLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="nextActionTime" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="nextActionUnit" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="settingsButton" candidateClass="UIBarButtonItem"/>
-            </relationships>
-        </class>
-        <class className="ViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/ViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="SignInUser:"/>
-                <relationship kind="outlet" name="SigninButton" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="UserEmailAddress" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="UserPassword" candidateClass="UITextField"/>
-            </relationships>
-        </class>
-        <class className="ViewDeckMainControllerViewController" superclassName="IIViewDeckController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/ViewDeckMainControllerViewController.h"/>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

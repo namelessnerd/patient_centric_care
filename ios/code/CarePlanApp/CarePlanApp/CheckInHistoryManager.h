@@ -11,7 +11,7 @@
 
 @interface CheckInHistoryManager : NSObject
   @property (nonatomic, retain)NSMutableArray * userCheckIns;
-  + (CheckInHistoryManager *) getgaleChatMessageControls;
+  + (CheckInHistoryManager *) getUserCheckinHistoryManager;
 
 -(void) addCheckin: (CheckIn *) currentCheckIn;
 

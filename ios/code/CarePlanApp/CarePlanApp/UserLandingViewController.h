@@ -8,9 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
-@interface UserLandingViewController : UIViewController
+@interface UserLandingViewController : UIViewController<UITableViewDelegate, UITableViewDataSource>
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *settingsButton;
 - (IBAction)showSettings:(id)sender;
+
+@property (weak, nonatomic) IBOutlet UITableView *userCheckInHistory;
+
 
 @property (weak, nonatomic) IBOutlet UILabel *nextActionLabel;
 @property (weak, nonatomic) IBOutlet UILabel *nextActionTime;

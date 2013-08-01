@@ -9,8 +9,12 @@
 #import <Foundation/Foundation.h>
 
 @interface CheckIn : NSObject
+{
+NSString * checkInTask;
+BOOL checkInStatus;
+}
 
-@property (nonatomic, weak) NSString * checkInTask;
-@property (nonatomic, assign) BOOL checkInStatus;
-
+-(id) initWithCheckInTask: (NSString *)taskName AndCheckInStatus:(BOOL) status;
+-(NSString *)getCheckInTask;
+-(BOOL) getCheckInStatus;
 @end

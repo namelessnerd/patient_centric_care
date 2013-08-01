@@ -10,6 +10,24 @@
 
 @implementation CheckIn
 
-@synthesize checkInTask, checkInStatus;
+
+
+
+-(id) initWithCheckInTask: (NSString *)taskName AndCheckInStatus:(BOOL) status{
+    self=[super init];
+    if (self){
+        checkInTask= taskName;
+        checkInStatus= status;
+    }
+    return self;
+}
+
+-(NSString *)getCheckInTask{
+    return checkInTask;
+}
+
+-(BOOL) getCheckInStatus{
+    return checkInStatus;
+}
 
 @end

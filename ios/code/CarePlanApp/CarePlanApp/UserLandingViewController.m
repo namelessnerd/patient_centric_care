@@ -5,9 +5,11 @@
 //  Created by Karthik Gomadam on 7/26/13.
 //  Copyright (c) 2013 Accenture. All rights reserved.
 //
-
+#import <QuartzCore/QuartzCore.h>
 #import "UserLandingViewController.h"
 #import "IIViewDeckController.h"
+#import "CheckInHistoryManager.h"
+#import "CheckIn.h"
 
 @interface UserLandingViewController ()
 
@@ -15,7 +17,7 @@
 
 @implementation UserLandingViewController
 
-@synthesize nextActionLabel, nextActionTime, checkinButton, nextActionUnit;
+@synthesize nextActionLabel, nextActionTime, checkinButton, nextActionUnit, userCheckInHistory;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -41,6 +43,13 @@
         self.nextActionLabel.adjustsFontSizeToFitWidth= YES;
     self.nextActionTime.adjustsFontSizeToFitWidth= YES;
     self.nextActionUnit.adjustsFontSizeToFitWidth= YES;
+    
+    // initialize the tableview delegates
+    
+    self.userCheckInHistory.dataSource= self;
+    self.userCheckInHistory.delegate= self;
+    self.userCheckInHistory.backgroundColor=[UIColor colorWithRed:61.0/255.0 green:65.0/255.0 blue:66.0/255.0 alpha:0.3];
+    [[self userCheckInHistory] layer].cornerRadius= 5;
     
     // bind click item to the checkin
 //    self.headerNavItem.
@@ -77,6 +86,11 @@
 
 
 -(void) createCheckin:(id)sender{
+    
+    
+    [[CheckInHistoryManager getUserCheckinHistoryManager] addCheckin:[[CheckIn alloc]initWithCheckInTask:self.nextActionLabel.text AndCheckInStatus:true]];
+    
+    
     self.nextActionLabel.text=@"You Rock!";
     self.nextActionUnit.text=@"";
     self.nextActionTime.text=@"";
@@ -87,9 +101,49 @@
                         self.checkinButton.image = [UIImage imageNamed:@"checkmark.png"];
                     } completion:NULL];
     
+    [[self userCheckInHistory]reloadData];
+   
+//    NSIndexPath *newIndexPath = [NSIndexPath indexPathForRow:[[[CheckInHistoryManager getUserCheckinHistoryManager]userCheckIns]count] inSection:0];
+//
+//
+//    [[self userCheckInHistory]beginUpdates];
+//    [[self userCheckInHistory]insertRowsAtIndexPaths:[NSArray arrayWithObject:newIndexPath] withRowAnimation:UITableViewRowAnimationFade];
+//    [[self userCheckInHistory]endUpdates];
+    
+    
+    
    [self performSelector:@selector(restoreCheckin:) withObject:self afterDelay:3.0 ];
     
     
     //[self performSegueWithIdentifier:@"userCheckinSegue" sender:sender];
 }
+
+#pragma mark - checkin history tableview methods 
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    // Return the number of rows in the section.
+    return [[[CheckInHistoryManager getUserCheckinHistoryManager]userCheckIns]count];
+}
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
+    return 1;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    UITableViewCell * cell= [[CheckInHistoryManager getUserCheckinHistoryManager]getCheckin:indexPath.row];
+    
+    if (cell==nil){
+        cell= [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:@"userMessageCell"];
+        cell.textLabel.text=@"Start Checking in to see your history";
+    }
+    
+    return cell;
+}
+
+- (void) tableView:(UITableView*)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath {
+    [cell setBackgroundColor:[UIColor clearColor]];
+}
+
 @end

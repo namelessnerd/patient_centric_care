@@ -22,7 +22,7 @@ static CheckInHistoryManager * _checkInHistoryManager= nil;
     return self;
 }
 
-+ (CheckInHistoryManager *) getgaleChatMessageControls{
++ (CheckInHistoryManager *) getUserCheckinHistoryManager{
     if (!(_checkInHistoryManager)){
         _checkInHistoryManager= [[CheckInHistoryManager alloc]init];
         return _checkInHistoryManager;
@@ -35,7 +35,7 @@ static CheckInHistoryManager * _checkInHistoryManager= nil;
     [[self userCheckIns]addObject:currentCheckIn];
 }
 
--(void) clearChatMessages{
+-(void) removeCheckins{
     [[self userCheckIns]removeAllObjects];
 }
 
@@ -45,9 +45,12 @@ static CheckInHistoryManager * _checkInHistoryManager= nil;
     
     UITableViewCell * tableViewCell= [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:@"userMessageCell"];
     CheckIn * currentCheckin= [[self userCheckIns]objectAtIndex:currentCheckinPosition];
-    tableViewCell.textLabel.text= currentCheckin.checkInTask;
-  
-    tableViewCell.imageView.image=currentCheckin.checkInStatus ? [UIImage imageNamed:@""] : [UIImage imageNamed:@""];
+
+    tableViewCell.textLabel.text= [currentCheckin getCheckInTask];
+    
+    tableViewCell.textLabel.font= [UIFont fontWithName:@"HelveticaNeue-Medium" size:19.0];
+    tableViewCell.textLabel.textColor = [UIColor whiteColor];
+    tableViewCell.imageView.image=[currentCheckin getCheckInStatus] ? [UIImage imageNamed:@"checkmark_small.png"] : [UIImage imageNamed:@"crossmark_small.png"];
     return tableViewCell;
     
 }
