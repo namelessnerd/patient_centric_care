@@ -14,6 +14,13 @@
 		DB14E5D517A99EC0002BFBD2 /* crossmark_small.png in Resources */ = {isa = PBXBuildFile; fileRef = DB14E5D317A99EC0002BFBD2 /* crossmark_small.png */; };
 		DB14E62117A9DEBB002BFBD2 /* ConnectedServicesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DB14E62017A9DEBB002BFBD2 /* ConnectedServicesViewController.m */; };
 		DB662E9B17AAE7B10066726D /* DashboardTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = DB662E9A17AAE7B10066726D /* DashboardTabBarController.m */; };
+		DB662EA217AAE9B40066726D /* diet.png in Resources */ = {isa = PBXBuildFile; fileRef = DB662E9C17AAE9B40066726D /* diet.png */; };
+		DB662EA317AAE9B40066726D /* exercise.png in Resources */ = {isa = PBXBuildFile; fileRef = DB662E9D17AAE9B40066726D /* exercise.png */; };
+		DB662EA417AAE9B40066726D /* home_summary.png in Resources */ = {isa = PBXBuildFile; fileRef = DB662E9E17AAE9B40066726D /* home_summary.png */; };
+		DB662EA517AAE9B40066726D /* medications.png in Resources */ = {isa = PBXBuildFile; fileRef = DB662E9F17AAE9B40066726D /* medications.png */; };
+		DB662EA617AAE9B40066726D /* sleep.png in Resources */ = {isa = PBXBuildFile; fileRef = DB662EA017AAE9B40066726D /* sleep.png */; };
+		DB662EA717AAE9B40066726D /* vitals.png in Resources */ = {isa = PBXBuildFile; fileRef = DB662EA117AAE9B40066726D /* vitals.png */; };
+		DB662EAA17AAEBB70066726D /* HomeTabViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DB662EA917AAEBB70066726D /* HomeTabViewController.m */; };
 		DB75974C17A9E360008F285B /* top_left.png in Resources */ = {isa = PBXBuildFile; fileRef = DB75974A17A9E360008F285B /* top_left.png */; };
 		DB75974D17A9E360008F285B /* top_right_person.png in Resources */ = {isa = PBXBuildFile; fileRef = DB75974B17A9E360008F285B /* top_right_person.png */; };
 		DB75974F17A9E710008F285B /* top_right_person_wide.png in Resources */ = {isa = PBXBuildFile; fileRef = DB75974E17A9E710008F285B /* top_right_person_wide.png */; };
@@ -60,6 +67,14 @@
 		DB14E62017A9DEBB002BFBD2 /* ConnectedServicesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConnectedServicesViewController.m; sourceTree = "<group>"; };
 		DB662E9917AAE7B10066726D /* DashboardTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DashboardTabBarController.h; sourceTree = "<group>"; };
 		DB662E9A17AAE7B10066726D /* DashboardTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DashboardTabBarController.m; sourceTree = "<group>"; };
+		DB662E9C17AAE9B40066726D /* diet.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = diet.png; path = ../../../images/icons/diet.png; sourceTree = "<group>"; };
+		DB662E9D17AAE9B40066726D /* exercise.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = exercise.png; path = ../../../images/icons/exercise.png; sourceTree = "<group>"; };
+		DB662E9E17AAE9B40066726D /* home_summary.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = home_summary.png; path = ../../../images/icons/home_summary.png; sourceTree = "<group>"; };
+		DB662E9F17AAE9B40066726D /* medications.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = medications.png; path = ../../../images/icons/medications.png; sourceTree = "<group>"; };
+		DB662EA017AAE9B40066726D /* sleep.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = sleep.png; path = ../../../images/icons/sleep.png; sourceTree = "<group>"; };
+		DB662EA117AAE9B40066726D /* vitals.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = vitals.png; path = ../../../images/icons/vitals.png; sourceTree = "<group>"; };
+		DB662EA817AAEBB70066726D /* HomeTabViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeTabViewController.h; sourceTree = "<group>"; };
+		DB662EA917AAEBB70066726D /* HomeTabViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeTabViewController.m; sourceTree = "<group>"; };
 		DB75974A17A9E360008F285B /* top_left.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = top_left.png; path = ../../../images/icons/top_left.png; sourceTree = "<group>"; };
 		DB75974B17A9E360008F285B /* top_right_person.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = top_right_person.png; path = ../../../images/icons/top_right_person.png; sourceTree = "<group>"; };
 		DB75974E17A9E710008F285B /* top_right_person_wide.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = top_right_person_wide.png; path = ../../../images/icons/top_right_person_wide.png; sourceTree = "<group>"; };
@@ -152,6 +167,8 @@
 		DB662E9817AAE7820066726D /* DashboardTabBarController */ = {
 			isa = PBXGroup;
 			children = (
+				DB662EA817AAEBB70066726D /* HomeTabViewController.h */,
+				DB662EA917AAEBB70066726D /* HomeTabViewController.m */,
 				DB662E9917AAE7B10066726D /* DashboardTabBarController.h */,
 				DB662E9A17AAE7B10066726D /* DashboardTabBarController.m */,
 			);
@@ -239,6 +256,12 @@
 		DB8F7565179F6A890089B018 /* images */ = {
 			isa = PBXGroup;
 			children = (
+				DB662E9C17AAE9B40066726D /* diet.png */,
+				DB662E9D17AAE9B40066726D /* exercise.png */,
+				DB662E9E17AAE9B40066726D /* home_summary.png */,
+				DB662E9F17AAE9B40066726D /* medications.png */,
+				DB662EA017AAE9B40066726D /* sleep.png */,
+				DB662EA117AAE9B40066726D /* vitals.png */,
 				DB75974E17A9E710008F285B /* top_right_person_wide.png */,
 				DB75974A17A9E360008F285B /* top_left.png */,
 				DB75974B17A9E360008F285B /* top_right_person.png */,
@@ -333,6 +356,12 @@
 				DB75974C17A9E360008F285B /* top_left.png in Resources */,
 				DB75974D17A9E360008F285B /* top_right_person.png in Resources */,
 				DB75974F17A9E710008F285B /* top_right_person_wide.png in Resources */,
+				DB662EA217AAE9B40066726D /* diet.png in Resources */,
+				DB662EA317AAE9B40066726D /* exercise.png in Resources */,
+				DB662EA417AAE9B40066726D /* home_summary.png in Resources */,
+				DB662EA517AAE9B40066726D /* medications.png in Resources */,
+				DB662EA617AAE9B40066726D /* sleep.png in Resources */,
+				DB662EA717AAE9B40066726D /* vitals.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -355,6 +384,7 @@
 				DB14E5D117A98341002BFBD2 /* CheckIn.m in Sources */,
 				DB14E62117A9DEBB002BFBD2 /* ConnectedServicesViewController.m in Sources */,
 				DB662E9B17AAE7B10066726D /* DashboardTabBarController.m in Sources */,
+				DB662EAA17AAEBB70066726D /* HomeTabViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
