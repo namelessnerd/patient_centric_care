@@ -7,9 +7,19 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <ShinobiCharts/ShinobiChart.h>
 
-@interface HomeTabViewController : UIViewController
-@property (weak, nonatomic) IBOutlet UIBarButtonItem *BackToMenuButton;
-- (IBAction)backToMenuAction:(id)sender;
+@interface HomeTabViewController : UIViewController <SChartDatasource>
+{
+    ShinobiChart *activityOverviewChart;
+}
+
+
+@property (weak, nonatomic) IBOutlet UIToolbar *homeTabTopBar;
+
+-(void) backToMenu:(id) sender;
+
+@property (weak, nonatomic) IBOutlet UIView *chartContainerView;
+
 
 @end

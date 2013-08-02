@@ -130,7 +130,7 @@
      */
     
     switch (indexPath.row) {
-        case 1:
+        case 1	:
             [self performSegueWithIdentifier:@"showDashboardSegue" sender:self.parentViewController];
             break;
         default:

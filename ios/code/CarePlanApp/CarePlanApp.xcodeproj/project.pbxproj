@@ -52,6 +52,12 @@
 		DBA3F0FA17A33CD600584E4D /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DBA3F0F917A33CD600584E4D /* QuartzCore.framework */; };
 		DBA3F0FC17A367E600584E4D /* monotone_cog_settings_gear.png in Resources */ = {isa = PBXBuildFile; fileRef = DBA3F0FB17A367E600584E4D /* monotone_cog_settings_gear.png */; };
 		DBC6EC1E17A2E28000759BB9 /* MyCarePlanTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DBC6EC1D17A2E28000759BB9 /* MyCarePlanTableViewController.m */; };
+		DBCE894B17AB03CA00A6D6DC /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DBCE894A17AB03CA00A6D6DC /* OpenGLES.framework */; };
+		DBCE894D17AB03D200A6D6DC /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DBCE894C17AB03D200A6D6DC /* Security.framework */; };
+		DBCE895417AB041200A6D6DC /* Nunito-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DBCE895017AB041200A6D6DC /* Nunito-Bold.ttf */; };
+		DBCE895517AB041200A6D6DC /* Nunito-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DBCE895117AB041200A6D6DC /* Nunito-Light.ttf */; };
+		DBCE895617AB041200A6D6DC /* Nunito-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DBCE895217AB041200A6D6DC /* Nunito-Regular.ttf */; };
+		DBCE895717AB041200A6D6DC /* ShinobiCharts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DBCE895317AB041200A6D6DC /* ShinobiCharts.framework */; };
 		DBE8F7B317A8881B0038F41F /* button.png in Resources */ = {isa = PBXBuildFile; fileRef = DBE8F7B217A8881B0038F41F /* button.png */; };
 /* End PBXBuildFile section */
 
@@ -116,6 +122,12 @@
 		DBA3F0FB17A367E600584E4D /* monotone_cog_settings_gear.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = monotone_cog_settings_gear.png; path = ../../../images/icons/monotone_cog_settings_gear.png; sourceTree = "<group>"; };
 		DBC6EC1C17A2E28000759BB9 /* MyCarePlanTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MyCarePlanTableViewController.h; path = ../MyCarePlanTableViewController.h; sourceTree = "<group>"; };
 		DBC6EC1D17A2E28000759BB9 /* MyCarePlanTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MyCarePlanTableViewController.m; path = ../MyCarePlanTableViewController.m; sourceTree = "<group>"; };
+		DBCE894A17AB03CA00A6D6DC /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
+		DBCE894C17AB03D200A6D6DC /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		DBCE895017AB041200A6D6DC /* Nunito-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nunito-Bold.ttf"; sourceTree = "<group>"; };
+		DBCE895117AB041200A6D6DC /* Nunito-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nunito-Light.ttf"; sourceTree = "<group>"; };
+		DBCE895217AB041200A6D6DC /* Nunito-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nunito-Regular.ttf"; sourceTree = "<group>"; };
+		DBCE895317AB041200A6D6DC /* ShinobiCharts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ShinobiCharts.framework; sourceTree = "<group>"; };
 		DBE8F7B217A8881B0038F41F /* button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = button.png; path = ../../../images/button.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -124,10 +136,13 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DBCE894D17AB03D200A6D6DC /* Security.framework in Frameworks */,
+				DBCE894B17AB03CA00A6D6DC /* OpenGLES.framework in Frameworks */,
 				DBA3F0FA17A33CD600584E4D /* QuartzCore.framework in Frameworks */,
 				DB8F7543179F6A750089B018 /* UIKit.framework in Frameworks */,
 				DB8F7545179F6A750089B018 /* Foundation.framework in Frameworks */,
 				DB8F7547179F6A750089B018 /* CoreGraphics.framework in Frameworks */,
+				DBCE895717AB041200A6D6DC /* ShinobiCharts.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -187,6 +202,8 @@
 		DB8F7536179F6A750089B018 = {
 			isa = PBXGroup;
 			children = (
+				DBCE894C17AB03D200A6D6DC /* Security.framework */,
+				DBCE894A17AB03CA00A6D6DC /* OpenGLES.framework */,
 				DBA3F0F917A33CD600584E4D /* QuartzCore.framework */,
 				DB8F757E17A083580089B018 /* app_icon114.png */,
 				DB8F757C17A0834F0089B018 /* app_icon57.png */,
@@ -207,6 +224,7 @@
 		DB8F7541179F6A750089B018 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				DBCE894E17AB041200A6D6DC /* ShinobiCharts.embeddedframework */,
 				DB8F7542179F6A750089B018 /* UIKit.framework */,
 				DB8F7544179F6A750089B018 /* Foundation.framework */,
 				DB8F7546179F6A750089B018 /* CoreGraphics.framework */,
@@ -280,6 +298,26 @@
 				DB8F756B179F6A980089B018 /* background_linen.png */,
 			);
 			name = images;
+			sourceTree = "<group>";
+		};
+		DBCE894E17AB041200A6D6DC /* ShinobiCharts.embeddedframework */ = {
+			isa = PBXGroup;
+			children = (
+				DBCE894F17AB041200A6D6DC /* Resources */,
+				DBCE895317AB041200A6D6DC /* ShinobiCharts.framework */,
+			);
+			name = ShinobiCharts.embeddedframework;
+			path = "../../../../../../Users/namelessnerd/Downloads/ShinobiCharts Trial/ShinobiCharts.embeddedframework";
+			sourceTree = "<group>";
+		};
+		DBCE894F17AB041200A6D6DC /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				DBCE895017AB041200A6D6DC /* Nunito-Bold.ttf */,
+				DBCE895117AB041200A6D6DC /* Nunito-Light.ttf */,
+				DBCE895217AB041200A6D6DC /* Nunito-Regular.ttf */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -362,6 +400,9 @@
 				DB662EA517AAE9B40066726D /* medications.png in Resources */,
 				DB662EA617AAE9B40066726D /* sleep.png in Resources */,
 				DB662EA717AAE9B40066726D /* vitals.png in Resources */,
+				DBCE895417AB041200A6D6DC /* Nunito-Bold.ttf in Resources */,
+				DBCE895517AB041200A6D6DC /* Nunito-Light.ttf in Resources */,
+				DBCE895617AB041200A6D6DC /* Nunito-Regular.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -469,6 +510,10 @@
 		DB8F7563179F6A750089B018 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"/Users/namelessnerd/Downloads/ShinobiCharts Trial/ShinobiCharts.embeddedframework\"",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "CarePlanApp/CarePlanApp-Prefix.pch";
 				INFOPLIST_FILE = "CarePlanApp/CarePlanApp-Info.plist";
@@ -480,6 +525,10 @@
 		DB8F7564179F6A750089B018 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"/Users/namelessnerd/Downloads/ShinobiCharts Trial/ShinobiCharts.embeddedframework\"",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "CarePlanApp/CarePlanApp-Prefix.pch";
 				INFOPLIST_FILE = "CarePlanApp/CarePlanApp-Info.plist";
