@@ -8,3 +8,4 @@ python/pcccenv
 [Tt]humbs.db
 *.DS_Store
 *.bak*
+apis/node_modules/*
