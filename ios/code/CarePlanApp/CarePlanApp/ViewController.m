@@ -133,12 +133,12 @@
 
 - (IBAction)SignInUser:(id)sender {
     [self performSegueWithIdentifier:@"loginVerifySegue" sender:sender];
-//    if (!( [self.UserEmailAddress.text isEqual:@""] && ![self.UserPassword.text isEqual:@""])){
-//        NSMutableDictionary * dict= [[NSMutableDictionary alloc]init];
-//        [dict setObject:self.UserEmailAddress.text forKey:@"username"];
-//        [dict setObject:self.UserPassword.text forKey:@"password"];
-//        [self.http_client loadURL:[NSURL URLWithString:@"http://localhost:8000/api/consumer/authenticate"] with_message:dict];
-//    }
+    if (!( [self.UserEmailAddress.text isEqual:@""] && ![self.UserPassword.text isEqual:@""])){
+        NSMutableDictionary * dict= [[NSMutableDictionary alloc]init];
+        [dict setObject:self.UserEmailAddress.text forKey:@"username"];
+        [dict setObject:self.UserPassword.text forKey:@"password"];
+        [self.http_client loadURL:[NSURL URLWithString:@"http://localhost:8000/api/consumer/authenticate"] with_message:dict];
+    }
 }
 
 

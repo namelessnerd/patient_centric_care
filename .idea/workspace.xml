@@ -5,14 +5,11 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ios/code/CarePlanApp/CarePlanApp.xcodeproj/project.xcworkspace/xcuserdata/namelessnerd.xcuserdatad/UserInterfaceState.xcuserstate" afterPath="$PROJECT_DIR$/ios/code/CarePlanApp/CarePlanApp.xcodeproj/project.xcworkspace/xcuserdata/namelessnerd.xcuserdatad/UserInterfaceState.xcuserstate" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ios/code/CarePlanApp/CarePlanApp/en.lproj/MainStoryboard.storyboard" afterPath="$PROJECT_DIR$/ios/code/CarePlanApp/CarePlanApp/en.lproj/MainStoryboard.storyboard" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ios/code/CarePlanApp/CarePlanApp/ViewController.m" afterPath="$PROJECT_DIR$/ios/code/CarePlanApp/CarePlanApp/ViewController.m" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ios/code/CarePlanApp/CarePlanApp.xcodeproj/project.pbxproj" afterPath="$PROJECT_DIR$/ios/code/CarePlanApp/CarePlanApp.xcodeproj/project.pbxproj" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/python/apis/api_app/vitals.py" afterPath="$PROJECT_DIR$/python/apis/api_app/vitals.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="patient_centric_care.iws" />
     <ignored path=".idea/workspace.xml" />
     <file path="/a.py" changelist="709bfb21-0378-4d94-bd35-3cc10b1a71f7" time="1374538330449" ignored="false" />
-    <file path="/Dummy.txt" changelist="709bfb21-0378-4d94-bd35-3cc10b1a71f7" time="1374779012974" ignored="false" />
+    <file path="/Dummy.txt" changelist="709bfb21-0378-4d94-bd35-3cc10b1a71f7" time="1377553835597" ignored="false" />
     <file path="/urls.py" changelist="709bfb21-0378-4d94-bd35-3cc10b1a71f7" time="1374614385003" ignored="false" />
     <file path="/views.py" changelist="709bfb21-0378-4d94-bd35-3cc10b1a71f7" time="1374614292484" ignored="false" />
     <file path="/apis.py" changelist="709bfb21-0378-4d94-bd35-3cc10b1a71f7" time="1374614551178" ignored="false" />
@@ -60,7 +57,7 @@
       <file leaf-file-name="consumer.py" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/python/apis/api_app/consumer.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="10" column="19" selection-start="304" selection-end="304" vertical-scroll-proportion="0.17123288">
+            <state line="10" column="19" selection-start="304" selection-end="304" vertical-scroll-proportion="0.17084283">
               <folding>
                 <element signature="e#0#17#0" expanded="true" />
               </folding>
@@ -259,12 +256,12 @@
   <component name="PropertiesComponent">
     <property name="options.splitter.main.proportions" value="0.3" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="options.lastSelected" value="project.propVCSSupport.Mappings" />
     <property name="recentsLimit" value="5" />
+    <property name="options.lastSelected" value="project.propVCSSupport.Mappings" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/.." />
     <property name="FullScreen" value="false" />
-    <property name="options.searchVisible" value="true" />
     <property name="options.splitter.details.proportions" value="0.2" />
+    <property name="options.searchVisible" value="true" />
   </component>
   <component name="PyConsoleOptionsProvider">
     <option name="myPythonConsoleState">
@@ -275,29 +272,6 @@
     </option>
   </component>
   <component name="RunManager" selected="Django server.patient_centric_care">
-    <configuration default="true" type="Python.DjangoServer" factoryName="Django server">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="patient_centric_care" />
-      <option name="launchJavascriptDebuger" value="false" />
-      <option name="port" value="8000" />
-      <option name="host" value="" />
-      <option name="additionalOptions" value="" />
-      <option name="browserUrl" value="" />
-      <option name="runTestServer" value="false" />
-      <option name="runNoReload" value="false" />
-      <option name="useCustomRunCommand" value="false" />
-      <option name="customRunCommand" value="" />
-      <method />
-    </configuration>
     <configuration default="true" type="tests" factoryName="Unittests">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -319,6 +293,29 @@
       <option name="PUREUNITTEST" value="true" />
       <option name="PARAMS" value="" />
       <option name="USE_PARAM" value="false" />
+      <method />
+    </configuration>
+    <configuration default="true" type="Python.DjangoServer" factoryName="Django server">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="patient_centric_care" />
+      <option name="launchJavascriptDebuger" value="false" />
+      <option name="port" value="8000" />
+      <option name="host" value="" />
+      <option name="additionalOptions" value="" />
+      <option name="browserUrl" value="" />
+      <option name="runTestServer" value="false" />
+      <option name="runNoReload" value="false" />
+      <option name="useCustomRunCommand" value="false" />
+      <option name="customRunCommand" value="" />
       <method />
     </configuration>
     <configuration default="true" type="tests" factoryName="Doctests">
@@ -402,7 +399,7 @@
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2524272" sideWeight="0.670354" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25512406" sideWeight="0.670354" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -478,6 +475,43 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/python/apis/api_app/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="43" column="0" selection-start="1586" selection-end="1586" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/python/apis/api_app/consumer.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="10" column="19" selection-start="304" selection-end="304" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="e#0#17#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/python/apis/api_app/vitals.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="6" column="3" selection-start="159" selection-end="159" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/python/apis/api_app/apis.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="10" column="46" selection-start="297" selection-end="297" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/python/apis/api_app/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="1" column="35" selection-start="61" selection-end="61" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/python/apis/apis/urls.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="9" column="53" selection-start="311" selection-end="311" vertical-scroll-proportion="0.0">
@@ -541,14 +575,12 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/python/apis/api_app/tobedeleted">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="47" column="84" selection-start="3960" selection-end="4108" vertical-scroll-proportion="0.8169177">
-          <folding />
-        </state>
+        <state line="47" column="84" selection-start="3960" selection-end="4108" vertical-scroll-proportion="0.8169177" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/python/apis/api_app/consumer.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="19" selection-start="304" selection-end="304" vertical-scroll-proportion="0.17123288">
+        <state line="10" column="19" selection-start="304" selection-end="304" vertical-scroll-proportion="0.17084283">
           <folding>
             <element signature="e#0#17#0" expanded="true" />
           </folding>
