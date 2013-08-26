@@ -9,3 +9,4 @@ python/pcccenv
 *.DS_Store
 *.bak*
 apis/node_modules/*
+apis/apiapp/node_modules/* 
