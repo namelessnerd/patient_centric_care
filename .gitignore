@@ -8,11 +8,6 @@ python/pcccenv
 [Tt]humbs.db
 *.DS_Store
 *.bak*
-apis/node_modules/*
-apis/apiapp/node_modules/**/* 
-apis/apiapp/node_modules/.bin/express
-apis/apiapp/node_modules/mongoose/website.js
-
-apis/apiapp/node_modules/express/.npmignore
-
-apis/apiapp/node_modules/express/.travis.yml
+apis/apiapp/node_modules/*
+apis/apiapp/node_modules/express/* 
+apis/apiapp/node_modules/mongoose/* 
