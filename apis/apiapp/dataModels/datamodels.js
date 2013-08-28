@@ -2,6 +2,7 @@
 exports.getCareplanSchema= getCareplanSchema= function(schema){
 
     return new schema({
+      id: String,
       medication:[{
                    dosage: Number, 
                    constraint: String, 
@@ -65,7 +66,7 @@ exports.getActivitySchema= getActivitySchema= function(schema){
     });
 }
 
-exports.getPersonalInfoSchema= getPersonalInfo= function(schema){
+exports.getPersonalInfoSchema= getPersonalInfoSchema= function(schema){
     return new schema({
         first_name: String, 
         last_name: String, 
@@ -80,7 +81,7 @@ exports.getPersonalInfoSchema= getPersonalInfo= function(schema){
 exports.getConsumerSchema= function(schema){
     return new schema ({
         id: String,
-        personal_info: [getPersonalInfo(schema)],
+        personal_info: [getPersonalInfoSchema(schema)],
         careplan: [getCareplanSchema(schema)],
         demographics: [getDemographicsSchema(schema)],
         vitals: [getVitalsSchema(schema)],
