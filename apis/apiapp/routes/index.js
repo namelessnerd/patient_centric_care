@@ -6,6 +6,10 @@ console.log('Index added');
 var main= require('./main');
 var consumer= require('./consumer');
 var vitals= require('./vitals');
+var careplan= require('./careplan');
+var demographics= require('./demographics');
+var activity= require('./activity');
+var personalInfo= require('./personalInfo');
 //var testingScripts= require('./testingScript');
 
 
