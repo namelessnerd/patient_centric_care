@@ -89,4 +89,11 @@ exports.getConsumerSchema= function(schema){
 }
 
 
+exports.getTempArraySchema= function(schema){
+    return new schema({
+      id:  schema.ObjectId, 
+      name: [String], 
+      age: [Number]
+    });
 
+}

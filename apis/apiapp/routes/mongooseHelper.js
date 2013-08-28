@@ -7,3 +7,7 @@ exports.getConsumerModel= function(mongoose){
 exports.getVitalsModel= function(mongoose){
   return  mongoose.model('myVitals', datamodels.getVitalsSchema(mongoose.Schema));
 }
+
+exports.getTempArrayModel= function(mongoose){
+  return  mongoose.model('testingScript', datamodels.getTempArraySchema(mongoose.Schema));
+}
