@@ -7,8 +7,26 @@ var main= require('./main');
 var consumer= require('./consumer');
 //var testingScripts= require('./testingScript');
 
+
+/* add methods. All methods to add a new entity go in here */
+
+app.post('/add/consumer', consumer.add);
+app.post('/add/careplan', careplan.add);
+app.post('/add/vitals', vitals.add);
+app.post('/add/demographics', demographics.add);
+app.post('/add/activity', activity.add);
+app.post('/add/personalInfo', personalInfo.add);
+
+/* update methods. Method to update records go here */
+
+app.put('/update/careplan', careplan.update);
+app.put('/update/vitals', vitals.update);
+app.put('/update/demographics', demographics.update);
+app.put('/update/activity', activity.update);
+app.put('/update/personalInfo', personalInfo.update);
+
+/* get methods go here */
 app.get('/', main.index);
-app.post('/consumer/add',consumer.add);
 //app.post('/test/add',testingScripts.add);
 //app.post('/test/update',testingScripts.update);
 //app.get('/test/get',testingScripts.get);
