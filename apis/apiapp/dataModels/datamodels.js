@@ -95,5 +95,4 @@ exports.getTempArraySchema= function(schema){
       name: [String], 
       age: [Number]
     });
-
 }
