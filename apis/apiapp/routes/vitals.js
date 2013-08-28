@@ -27,3 +27,6 @@ exports.update= function(req, res){
    }
   res.send('I am sending a text instead of a template');
 };
+
+exports.add= function(req, res){
+};
