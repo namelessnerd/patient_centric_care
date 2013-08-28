@@ -85,7 +85,7 @@ exports.add= function(req, res){
       if(err)
         console.log('Error');
       else{
-       console.log('Saved!');
+       console.log(consumer._id);
        mongoose.disconnect();
       }
      });

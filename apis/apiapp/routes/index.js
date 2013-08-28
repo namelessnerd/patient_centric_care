@@ -6,6 +6,10 @@ console.log('Index added');
 var main= require('./main');
 var consumer= require('./consumer');
 var vitals= require('./vitals');
+var careplan= require('./careplan');
+var demographics= require('./demographics');
+var activity= require('./activity');
+var personalInfo= require('./personalInfo');
 //var testingScripts= require('./testingScript');
 
 
@@ -18,7 +22,8 @@ app.post('/add/demographics', demographics.add);
 app.post('/add/activity', activity.add);
 app.post('/add/personalInfo', personalInfo.add);
 
-/* update methods. Method to update records go here */
+/* 
+update methods. Method to update records go here 
 
 app.put('/update/careplan', careplan.update);
 app.put('/update/vitals', vitals.update);
@@ -31,5 +36,3 @@ app.get('/', main.index);
 //app.post('/test/add',testingScripts.add);
 //app.post('/test/update',testingScripts.update);
 //app.get('/test/get',testingScripts.get);
-
-

@@ -4,6 +4,10 @@ var mongoose= require('mongoose');
  * Update Vitals
  *
  */
+exports.add= function(req, res){
+    res.send('Add a vital here ');
+
+}
 exports.update= function(req, res){
   console.log(req.body);
   if (req.body){

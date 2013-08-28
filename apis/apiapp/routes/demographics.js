@@ -3,6 +3,10 @@
  * GET users listing.
  */
 
-exports.list = function(req, res){
+exports.add= function(req, res){
+  res.send("respond with a resource");
+};
+
+exports.update= function(req, res){
   res.send("respond with a resource");
 };
