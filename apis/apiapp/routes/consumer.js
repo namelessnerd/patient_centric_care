@@ -30,7 +30,12 @@ exports.add= function(req, res){
 
    if (req.body.vital){
      console.log(req.body.vital);
-     vitalInstance= new mongooseHelper.getVitalsModel(mongoose)({type:req.body.vital.type, value: req.body.vital.value, when: Date.now});     
+     vitalInstance= new mongooseHelper.getVitalsModel(mongoose)({
+			                                     type:req.body.vital.type, 
+			                                     value: req.body.vital.value, 
+			                                     when: Date.now,
+			                                     device: req.body.vital.device
+		                                      });     
 	 }
 
    if (req.body.activity){
@@ -53,13 +58,17 @@ exports.add= function(req, res){
 			                                      state:req.body.personalinfo.state, 
 			                                      date_of_birth:req.body.personalinfo.date_of_birth, 
 			                                      username:req.body.personalinfo.username, 
-			                                      password:req.body.personalinfo.password, 
+			                                      password:req.body.personalinfo.password
 		                                        });     
 	 }
 
    if (req.body.careplan){
      console.log(req.body.careplan);
      careplanInstance= new mongooseHelper.getCareplanModel(mongoose)({
+			                                        medication:req.body.careplan.medication, 
+			                                        vitals:req.body.careplan.vitals, 
+			                                        diet:req.body.careplan.diet, 
+			                                        exercise:req.body.careplan.exercise
 		                                        });     
 	 }
       
@@ -70,6 +79,7 @@ exports.add= function(req, res){
 			"personal_info":personalInfoInstance,
 			"careplan":careplanInstance
     });
+
     mongoose.connect('mongodb://localhost/patientcare');
     consumer.save(function (err, consumer){
       if(err)
@@ -83,3 +93,24 @@ exports.add= function(req, res){
 
   res.send('I am sending a text instead of a template');
 };
+
+/*
+ * Get a consumer.
+ */
+exports.get= function(req, res){
+    var consumer= new mongooseHelper.getConsumerModel(mongoose);
+    mongoose.connect('mongodb://localhost/patientcare');
+
+    consumer.findOne({_id:'521e6b7269f5e96d29000015'}, function (err, result){
+      if(err){
+        console.log('Error');
+        console.log(err);
+        res.send('I am sending a text instead of a template');
+      }else{
+       console.log('Got it!');
+       mongoose.disconnect();
+       res.send(result);
+      }
+    });
+};
+

@@ -5,6 +5,7 @@
 console.log('Index added');
 var main= require('./main');
 var consumer= require('./consumer');
+var vitals= require('./vitals');
 //var testingScripts= require('./testingScript');
 
 
