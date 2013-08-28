@@ -36,6 +36,7 @@ exports.getCareplanSchema= getCareplanSchema= function(schema){
 exports.getVitalsSchema= getVitalsSchema=  function(schema){
 
     return new schema({
+      id: String,
       type: String, 
       value: Number, 
       when: Date,
@@ -44,7 +45,7 @@ exports.getVitalsSchema= getVitalsSchema=  function(schema){
 }
 
 exports.getDemographicsSchema= getDemographicsSchema= function(schema){
-    return new schema({
+    return new schema({  
       ethnicity: String, 
       age: Number, 
       gender: String,
@@ -55,6 +56,7 @@ exports.getDemographicsSchema= getDemographicsSchema= function(schema){
 
 exports.getActivitySchema= getActivitySchema= function(schema){
     return new schema({
+        id: String, 
         activity: String,
         measurement: [{key:String, value: Number}],
         intensity: String, 
@@ -63,10 +65,23 @@ exports.getActivitySchema= getActivitySchema= function(schema){
     });
 }
 
-
+exports.getPersonalInfoSchema= getPersonalInfo= function(schema){
+    return new schema({
+        first_name: String, 
+        last_name: String, 
+        city: String, 
+        state: String, 
+        date_of_birth: Date,
+        username: String, 
+        password: String
+    });
+}
 
 exports.getConsumerSchema= function(schema){
     return new schema ({
+        id: String,
+        personal_info: [getPersonalInfo(schema)],
+        careplan: [getCareplanSchema(schema)],
         demographics: [getDemographicsSchema(schema)],
         vitals: [getVitalsSchema(schema)],
         activity: [getActivitySchema(schema)]

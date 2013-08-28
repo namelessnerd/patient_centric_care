@@ -15,7 +15,6 @@ exports.add= function(req, res){
       "vitals":vitalInstance 
     });
     mongoose.connect('mongodb://localhost/patientcare');
-
     consumer.save(function (err, consumer){
       if(err)
         console.log('Error');
