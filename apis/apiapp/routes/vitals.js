@@ -8,38 +8,28 @@ var dataModels= require('../datamodels/datamodels.js');
  *
  */
 
-function updateVital(updateCondition, updateValue){
+function updateVital(updateCondition, updateValue, res){
     var consumer= new mongooseHelper.getConsumerModel(mongoose);
     console.log(updateCondition);
     console.log(updateValue);
-    mongooseHelper.updateDB(consumer, updateCondition, updateValue,{upsert:true}, function (err, vitals){
-        if (err){
-            console.log(err);
-            return 0;
+
+    var updateFunction= function(err, updateResponse){
+          if (err)
+            res.send(responseHelper.errorMSG('Adding a vital requires a consumer ID and a vital object'));
+          else
+            res.send(responseHelper.successMSG('Added a vitals object'));
+
         }
-        else{
-            console.log(responseHelper.successMSG(vitals));
-            return 1;
-        }
-    });
+    mongooseHelper.updateDB(consumer, updateCondition, updateValue,{upsert:true}, updateFunction);
 
 }
 
 exports.add= function(req, res){
   console.log(req.body);
-  if (req.body.vitals && req.body.consumerID){
-    var vitals= dataModels.getVitalsObject(req.body.vitals);
-    if (vitals){
-        if (updateVital({_id:req.body.consumerID}, {$push:{vitals:vitals}})){
-            res.send(responseHelper.successMSG('Vitals added'));
-        }
-    }
-    else
-        res.send(responseHelper.errorMSG('Adding a vital requires a valid vital object. Check that you have both the type and value for the vital.'));
-  }
+  if (req.body.vitals && req.body.consumerID)
+        updateVital({_id:req.body.consumerID}, {$push:{vitals:req.body.vitals}}, res);
   else
     res.send(responseHelper.errorMSG('Adding a vital requires a consumer ID and a vital object'));
-  
 }
 
 exports.update= function(req, res){
