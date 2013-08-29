@@ -78,8 +78,18 @@ exports.getActivitySchema= getActivitySchema= function(schema){
         measurement: [{key:String, value: Number}],
         intensity: String, 
         device: String, 
+        when: Date, 
         vitals:{heartRate: Number}
     });
+}
+
+
+exports.personalHealthConditionSchema= getPersonalHealthConditionSchema= function (schema){
+    medicalConditions=[{condition_name: String, diagnosis: String, when: Date}]
+}
+
+exports.personalHabitsSchema= getPersonalHabitsSchema= function (schema){
+    personalHabits=[{habitName: String, frequency: Number}]
 }
 
 exports.getPersonalInfoSchema= getPersonalInfoSchema= function(schema){
