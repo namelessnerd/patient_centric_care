@@ -1,5 +1,3 @@
-
-
 // list of resources to be imported. The resource main.js has non restful methods. API methods for each object
 // is captured in js file with its own name. 
 console.log('Index added');
@@ -22,17 +20,17 @@ app.post('/add/demographics', demographics.add);
 app.post('/add/activity', activity.add);
 app.post('/add/personalInfo', personalInfo.add);
 
-app.put('/update/vitals', vitals.update);
-/* 
-update methods. Method to update records go here 
+/* update methods. All methods to update records go in here */
 
-app.put('/update/careplan', careplan.update);
-app.put('/update/demographics', demographics.update);
+app.put('/update/vitals', vitals.update);
 app.put('/update/activity', activity.update);
+app.put('/update/demographics', demographics.update);
+app.put('/update/careplan', careplan.update);
 app.put('/update/personalInfo', personalInfo.update);
 
 /* get methods go here */
 app.get('/', main.index);
+
 //app.post('/test/add',testingScripts.add);
 //app.post('/test/update',testingScripts.update);
 //app.get('/test/get',testingScripts.get);

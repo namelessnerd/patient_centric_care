@@ -44,5 +44,4 @@ exports.updateDB= function(modelToUpdate, updateCondition,updateValue, isUpsert,
         mongoose.disconnect();
         callback(err, updateStatus);
     });
-
 }
