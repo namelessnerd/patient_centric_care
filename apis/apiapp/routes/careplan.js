@@ -39,8 +39,7 @@ exports.add= function(req, res){
 			                                       measurement: req.body.activity.measurement, 
 			                                       intensity: req.body.activity.intensity, 
 			                                       device: req.body.activity.device, 
-			                                       vitals: req.body.activity.vitals, 
-				                                     when: Date.now
+			                                       vitals: req.body.activity.vitals
 		                                        });     
 	 }
 
@@ -53,13 +52,17 @@ exports.add= function(req, res){
 			                                      state:req.body.personalinfo.state, 
 			                                      date_of_birth:req.body.personalinfo.date_of_birth, 
 			                                      username:req.body.personalinfo.username, 
-			                                      password:req.body.personalinfo.password, 
+			                                      password:req.body.personalinfo.password 
 		                                        });     
 	 }
 
    if (req.body.careplan){
      console.log(req.body.careplan);
      careplanInstance= new mongooseHelper.getCareplanModel(mongoose)({
+			                                      medication:req.body.careplan.medication,
+			                                      vitals:req.body.careplan.vitals,
+			                                      diet:req.body.careplan.diet,
+			                                      exercise:req.body.careplan.exercise
 		                                        });     
 	 }
       
