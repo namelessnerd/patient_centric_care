@@ -43,7 +43,8 @@ exports.update= function(req, res){
         updateObj["vitals.$."+postbody.attributes[attribute]["attr"]]= postbody.attributes[attribute]["value"];
     }
     console.log(updateObj);
-    var consumer= new mongooseHelper.getConsumerModel(mongoose);
+    updateVital({"vitals._id":postbody.vitalsID}, {$set:updateObj}, res);
+    /*var consumer= new mongooseHelper.getConsumerModel(mongoose);
     mongooseHelper.updateDB(consumer, {"vitals._id":postbody.vitalsID}, {$set:updateObj},{upsert:true}, function (err, vitals){
       if(err){
         console.log('Error');
@@ -53,7 +54,7 @@ exports.update= function(req, res){
        console.log('Updated!');
         res.send(responseHelper.successMSG(vitals));
       }
-     });
+     });*/
    }
   else{
     res.send(responseHelper.errorMSG('Updating a vital requires a consumer ID and a vitals ID'));
