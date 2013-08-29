@@ -8,6 +8,7 @@ python/pcccenv
 [Tt]humbs.db
 *.DS_Store
 *.bak*
+*.swp
 apis/apiapp/node_modules/*
 apis/apiapp/node_modules/express/* 
 apis/apiapp/node_modules/mongoose/* 
