@@ -1,3 +1,4 @@
+var mongooseHelper= require('../routes/mongooseHelper');
 
 exports.getCareplanSchema= getCareplanSchema= function(schema){
 
@@ -43,6 +44,21 @@ exports.getVitalsSchema= getVitalsSchema=  function(schema){
       when: Date,
       device: String
     });
+}
+
+exports.getVitalsObject= function(vitalObj){
+
+  if (vitalObj.type && vitalObj.value)
+      return new mongooseHelper.getVitalsModel()({
+			                                     type:vitalObj.type, 
+			                                     value: vitalObj.value, 
+			                                     when: vitalObj.date ? vitalObj.date : Date.now,
+			                                     device: vitalObj.device
+		                                      });
+  else
+      return 0;
+
+
 }
 
 exports.getDemographicsSchema= getDemographicsSchema= function(schema){

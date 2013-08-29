@@ -36,3 +36,13 @@ exports.getCareplanModel= function(mongoose){
 exports.getTempArrayModel= function(mongoose){
   return tempArrayModel;
 }
+
+
+exports.updateDB= function(modelToUpdate, updateCondition,updateValue, isUpsert, callback){
+    mongoose.connect('mongodb://localhost/patientcare');
+    modelToUpdate.update(updateCondition, updateValue, {upsert:isUpsert}, function (err, updateStatus){
+        mongoose.disconnect();
+        callback(err, updateStatus);
+    });
+
+}

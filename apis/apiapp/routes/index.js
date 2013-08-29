@@ -22,11 +22,11 @@ app.post('/add/demographics', demographics.add);
 app.post('/add/activity', activity.add);
 app.post('/add/personalInfo', personalInfo.add);
 
+app.put('/update/vitals', vitals.update);
 /* 
 update methods. Method to update records go here 
 
 app.put('/update/careplan', careplan.update);
-app.put('/update/vitals', vitals.update);
 app.put('/update/demographics', demographics.update);
 app.put('/update/activity', activity.update);
 app.put('/update/personalInfo', personalInfo.update);
