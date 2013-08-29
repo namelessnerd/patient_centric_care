@@ -1,7 +1,7 @@
 var mongooseHelper= require('./mongooseHelper.js');
 var mongoose= require('mongoose');
 var responseHelper= require('./responseHelper');
-var dataModels= require('../datamodels/datamodels.js');
+var dataModels= require('../dataModels/datamodels.js');
 
 /*
  * Update Vitals
@@ -18,7 +18,6 @@ function updateVital(updateCondition, updateValue, res){
             res.send(responseHelper.errorMSG('Adding a vital requires a consumer ID and a vital object'));
           else
             res.send(responseHelper.successMSG('Added a vitals object'));
-
         }
     mongooseHelper.updateDB(consumer, updateCondition, updateValue,{upsert:true}, updateFunction);
 
