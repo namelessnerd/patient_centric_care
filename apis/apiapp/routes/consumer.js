@@ -96,16 +96,23 @@ exports.add= function(req, res){
 
 /*
  * Get a consumer.
- */
 exports.get= function(req, res){
+    var queryObj= req.query['values'];
+    console.log(typeof(JSON.parse(queryObj)));
+
+    //if ('consumerID' in queryObj)
+
+      //  console.log('ID Found');
+
+
+
     var consumer= new mongooseHelper.getConsumerModel(mongoose);
     mongoose.connect('mongodb://localhost/patientcare');
-
-    consumer.findOne({_id:'521e6b7269f5e96d29000015'}, function (err, result){
+    consumer.find({}, function (err, result){
       if(err){
         console.log('Error');
         console.log(err);
-        res.send('I am sending a text instead of a template');
+        mongoose.disconnect();
       }else{
        console.log('Got it!');
        mongoose.disconnect();
@@ -116,3 +123,5 @@ exports.get= function(req, res){
 
 exports.update= function(req, res){
 };
+
+ */

@@ -30,6 +30,7 @@ app.put('/update/personalInfo', personalInfo.update);
 
 /* get methods go here */
 app.get('/', main.index);
+//app.get('/get/consumer', consumer.get);
 
 //app.post('/test/add',testingScripts.add);
 //app.post('/test/update',testingScripts.update);
