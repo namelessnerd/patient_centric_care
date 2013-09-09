@@ -4,21 +4,29 @@ Patient Centric Care
 
 
 
-ios app
+
+Vitals
 =======
 
->> #### What do we want the app to do? 
-   Health and Welness management application that integrates data from variety of sources to track adherence 
-   to a care plan. To do this we bring data in from a variety of sources including EMR, EHR, demographic data, 
-   general health data including height, weight, BMI, cholesterol, and blood pressure among others, 
-   lifestyle data including exercise, sleep, and diet along with user contributed data pertaining to emotional 
-   states, their adherence to their medication, exercise, and diet regimens. 
-
-   The app should display the basic health information to the users, alert them about their care plan regimen, 
-   monitor and gather data about user behavior, and provide modalities to help the user contribute data via checkins.
+>> #### Updating a vital 
+   The end point for updating a vital is _/update/vitals_.
+           ```javascript
+            {{
+              "consumerID": "52290e1c436f838a24000006",
+    "developerID": "123",
+    "vitalsID": "522a8b88857d93d028000006",
+    "payload": {
+        "attributes": [{
+            "attributeName": "value",
+            "newValue": 115
+        }, {
+            "attributeName": "device",
+            "newValue": "Beuer"
+        }]
+    }
+}
+            ```
    
-   The app also shows the user their trusted circle and has a seamless way of enabling sharing between a user and 
-   their trusted circle. 
   
 >> #### Data objectives of the app
 
