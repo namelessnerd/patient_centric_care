@@ -15,14 +15,14 @@ var personalInfo= require('./personalInfo');
 
 app.post('/add/consumer', consumer.add);
 app.post('/add/careplan', careplan.add);
-app.post('/add/vitals', vitals.add);
+app.post('/add/vital', vitals.add);
 app.post('/add/demographics', demographics.add);
 app.post('/add/activity', activity.add);
 app.post('/add/personalInfo', personalInfo.add);
 
 /* update methods. All methods to update records go in here */
 
-app.put('/update/vitals', vitals.update);
+app.put('/update/vital', vitals.update);
 app.put('/update/activity', activity.update);
 app.put('/update/demographics', demographics.update);
 app.put('/update/careplan', careplan.update);

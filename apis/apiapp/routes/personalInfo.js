@@ -47,29 +47,31 @@ exports.update= function(req, res){
         var updateObj={};  
         var attributes= req.body.payload.attributes;
         for (attribute in attributes){
-          
           updateObj["personal_info."+attributes[attribute]["attributeName"]]= attributes[attribute]["newValue"];
         }
         console.log(updateObj);
         var consumer= new mongooseHelper.getConsumerModel();
         mongooseHelper.updateDB(consumer,{_id: req.body.consumerID},{$set:updateObj},{upsert:true}, 
-                                function(err, response){
-                                  if (err)
-                                    res.send(responseHelper.errorMSG('Error updating demographic')); 
-                                  else{
-                                    console.log(response);
-                                    res.send(responseHelper.successMSG('Successfully updated Personal Info'));
-                                  }
-                                });
-            } // end if attributes keycheck
+          function(err, response){
+            if (err){
+              console.log(err);  
+              res.send(responseHelper.errorMSG('Error updating demographic')); 
+            }
             else{
-                res.send(responseHelper.errorMSG('No attributes to update. Please refer to update documentation.')); 
-            }// end else attributes keycheck
-        }// end if developer has access to consumer record
-        else{
-            res.send(responseHelper.errorMSG('The developer ID you are using does not have permissions'+ 
-                                             'to edit the consumer object with ID' + req.body.consumerID));
-        }// end else developer does not have access to consumer record
+              console.log(response);
+              res.send(responseHelper.successMSG('Successfully updated Personal Info'));
+            }
+          });
+      } // end if attributes keycheck
+      else{
+        res.send(responseHelper.errorMSG('No attributes to update. Please refer to update documentation.')); 
+      }// end else attributes keycheck
+    }// end if developer has access to consumer record
+    else{
+      console.log('id server responded with an error');
+      res.send(responseHelper.errorMSG('The developer ID you are using does not have permissions'+ 
+                                       'to edit the consumer object with ID' + req.body.consumerID));
+    }// end else developer does not have access to consumer record
   }// end closure function addPersonalInfo
   
   if (req.body.developerID && req.body.consumerID){

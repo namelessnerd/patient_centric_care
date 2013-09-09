@@ -42,7 +42,7 @@ exports.getVitalsSchema= function(schema){
       consumerID: String,
       type: String, 
       value: Number, 
-      units: String, 
+      unit: String, 
       when: Date,
       device: String
     });

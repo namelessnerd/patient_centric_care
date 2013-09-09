@@ -11,8 +11,8 @@ var dataModels= require('../dataModels/datamodels.js');
 exports.add= function(req, res){
   var addVitals= function(checkStatus){
         if (checkStatus){
-            if (req.body.payload.vitals){
-              var vitalObj= req.body.payload.vitals;
+            if (req.body.payload.vital){
+              var vitalObj= req.body.payload.vital;
               var vitals= new mongooseHelper.getVitalsModel()({
                 consumerID: req.body.consumerID,
                 type: vitalObj.type, 
@@ -41,12 +41,13 @@ exports.add= function(req, res){
     
     }// end closure function addPersonalInfo
   
-  if (req.body.developerID && req.body.consumerID){
+  if (req.body.developerID && req.body.consumerID && req.body.payload){
     console.log(" Both IDs are present ");
     devIDChecker.check(req.body.developerID, req.body.consumerID, addVitals);
   }
   else
-    res.send(responseHelper.errorMSG('Adding Personal Info requires a consumer ID and a developerID'));
+    res.send(responseHelper.errorMSG('Adding Personal Info requires a consumer ID ,a developerID, a payload object' + 
+                                     'wrapping the object to be added'));
 }
 
 exports.update= function(req, res){
