@@ -1,18 +1,19 @@
-var mongooseHelper= require('../routes/mongooseHelper');
 
-exports.getCareplanSchema= getCareplanSchema= function(schema){
-
+exports.getCareplanSchema= function(schema){
     return new schema({
-      id: String,
+      consumerID: String,
       medication:[{
-                   dosage: Number, 
-                   constraint: String, 
-                   frequency: Number, 
-                   length:Number
-                 }],
+          name: String, 
+          dosage: {quantity: Number, unit: String},
+          constraint: String, 
+          repeatsWhen: {frequency: Number, unit: String},  
+          repeatsFor: { length:Number, unit: String}
+      }],
       vitals:[{
                constraint: Number, 
                frequency: Number, 
+               repeatsWhen: {frequency: Number, unit: String},  
+               repeatsFor: { length:Number, unit: String},
                device: String
              }],
       diet:[{
@@ -30,96 +31,85 @@ exports.getCareplanSchema= getCareplanSchema= function(schema){
                  minDuration: Number, 
                  maxDuration: Number, 
                  device: String, 
-                 frequency: Number 
+                 repeatsWhen: {frequency: Number, unit: String},  
+                 repeatsFor: { length:Number, unit: String}
                 }]
     });
 };
 
-exports.getVitalsSchema= getVitalsSchema=  function(schema){
-
+exports.getVitalsSchema= function(schema){
     return new schema({
-      id: String,
+      consumerID: String,
       type: String, 
       value: Number, 
+      units: String, 
       when: Date,
       device: String
     });
 }
 
-exports.getVitalsObject= function(vitalObj){
-
-  if (vitalObj.type && vitalObj.value)
-      return new mongooseHelper.getVitalsModel()({
-			                                     type:vitalObj.type, 
-			                                     value: vitalObj.value, 
-			                                     when: vitalObj.date ? vitalObj.date : Date.now,
-			                                     device: vitalObj.device
-		                                      });
-  else
-      return 0;
-
-
-}
-
-exports.getDemographicsSchema= getDemographicsSchema= function(schema){
-    return new schema({  
-      ethnicity: String, 
-      age: Number, 
-      gender: String,
-      employment: String,
-      industry: String
-    });
-}
-
 exports.getActivitySchema= getActivitySchema= function(schema){
     return new schema({
-        id: String, 
+        consumerID: String,
         activity: String,
-        measurement: [{key:String, value: Number}],
+        measurement: [{name:String, value: Number, unit: String}],
         intensity: String, 
         device: String, 
         when: Date, 
         vitals:{heartRate: Number}
     });
 }
+// to be deleted
 
 
-exports.personalHealthConditionSchema= getPersonalHealthConditionSchema= function (schema){
-    medicalConditions=[{condition_name: String, diagnosis: String, when: Date}]
-}
-
-exports.personalHabitsSchema= getPersonalHabitsSchema= function (schema){
-    personalHabits=[{habitName: String, frequency: Number}]
-}
-
-exports.getPersonalInfoSchema= getPersonalInfoSchema= function(schema){
-    return new schema({
-        first_name: String, 
-        last_name: String, 
-        city: String, 
-        state: String, 
-        date_of_birth: Date,
-        username: String, 
-        password: String
+exports.getPersonalHealthConditionSchema=  function (schema){
+    return new schema ({ 
+      consumerID: String, 
+      condition_name: String, 
+      diagnosis: String, 
+      when: Date
     });
 }
 
+exports.getPersonalHabitsSchema = function (schema){
+    return new schema ({ 
+      consumerID: String,
+      habitName: String, 
+      frequency: Number 
+    });
+}
+
+exports.getDeveloperSchema= function (schema){
+    return new schema ({ 
+      developerID: String, 
+      consumerID: [String]
+    });
+}
+
+// changing the consumer model to not store vitals, activities, and such as a list. 
 exports.getConsumerSchema= function(schema){
     return new schema ({
-        id: String,
-        personal_info: [getPersonalInfoSchema(schema)],
-        careplan: [getCareplanSchema(schema)],
-        demographics: [getDemographicsSchema(schema)],
-        vitals: [getVitalsSchema(schema)],
-        activity: [getActivitySchema(schema)]
+        personal_info: {
+                        first_name: String, 
+                        last_name: String, 
+                        city: String, 
+                        state: String, 
+                        date_of_birth: Date,
+                        age: Number, 
+                        username: String, 
+                        password: String
+                       },
+        demographics: {  
+                       ethnicity: String, 
+                       gender: String,
+                       employment: String,
+                       industry: String
+                      },
+        developerID:{
+                      devID:String, 
+                      accessUntil: Date
+                    }
     });
 }
 
 
-exports.getTempArraySchema= function(schema){
-    return new schema({
-      id:  schema.ObjectId, 
-      name: [String], 
-      age: [Number]
-    });
-}
