@@ -1,8 +1,8 @@
 
 exports.errorMSG= function(message){
-    return {"status":"Error", "reason": message};
+    return {"status":0, "message": message};
 }
 
 exports.successMSG= function(message){
-    return {"status":"success", "value": message};
+    return {"status":1, "message": message};
 }

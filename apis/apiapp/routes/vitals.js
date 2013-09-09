@@ -1,62 +1,87 @@
 var mongooseHelper= require('./mongooseHelper.js');
-var mongoose= require('mongoose');
 var responseHelper= require('./responseHelper');
+var devIDChecker= require('./devIDChecker');
 var dataModels= require('../dataModels/datamodels.js');
 
 /*
- * Update Vitals
+ * Update Demographics 
  *
  */
 
-function updateVital(updateCondition, updateValue, res){
-    var consumer= new mongooseHelper.getConsumerModel(mongoose);
-    console.log(updateCondition);
-    console.log(updateValue);
-
-    var updateFunction= function(err, updateResponse){
-          if (err)
-            res.send(responseHelper.errorMSG('Adding a vital requires a consumer ID and a vital object'));
-          else
-            res.send(responseHelper.successMSG('Added a vitals object'));
-        }
-    mongooseHelper.updateDB(consumer, updateCondition, updateValue,{upsert:true}, updateFunction);
-
-}
-
 exports.add= function(req, res){
-  console.log(req.body);
-  if (req.body.vitals && req.body.consumerID)
-        updateVital({_id:req.body.consumerID}, {$push:{vitals:req.body.vitals}}, res);
+  var addVitals= function(checkStatus){
+        if (checkStatus){
+            if (req.body.payload.vitals){
+              var vitalObj= req.body.payload.vitals;
+              var vitals= new mongooseHelper.getVitalsModel()({
+                consumerID: req.body.consumerID,
+                type: vitalObj.type, 
+                value: vitalObj.value, 
+                units: vitalObj.units, 
+                when: vitalObj.when,
+                device: vitalObj.device
+              });
+              mongooseHelper.saveDB(vitals,function(err, response){
+                                        if (err){
+                                            console.log(err);
+                                            res.send(responseHelper.errorMSG('Error saving vitals')); 
+                                        }
+                                        else
+                                            res.send(responseHelper.successMSG('Successfully saved vitals'));
+                                      });
+            } // end if demographics keycheck
+            else{
+                res.send(responseHelper.errorMSG('Vitals data missing in payload')); 
+            }// end else demographics keycheck
+        }// end if developer has access to consumer record
+        else{
+            res.send(responseHelper.errorMSG('The developer ID you are using does not have permissions'+ 
+                                             'to edit the consumer object with ID' + req.body.consumerID));
+        }// end else developer does not have access to consumer record
+    
+    }// end closure function addPersonalInfo
+  
+  if (req.body.developerID && req.body.consumerID){
+    console.log(" Both IDs are present ");
+    devIDChecker.check(req.body.developerID, req.body.consumerID, addVitals);
+  }
   else
-    res.send(responseHelper.errorMSG('Adding a vital requires a consumer ID and a vital object'));
+    res.send(responseHelper.errorMSG('Adding Personal Info requires a consumer ID and a developerID'));
 }
 
 exports.update= function(req, res){
-  console.log(req.body);
-  var postbody= req.body
-  // b.consumers.update({"vitals._id": ObjectId('521e997061dc6da30f000011')},{$set:{"vitals.$.device":"beuer"}}, {upsert: true});
-  if (postbody.vitalsID && postbody.consumerID){
-    var updateObj={};  
-    for (attribute in postbody.attributes){
-        console.log(postbody.attributes[attribute]);
-        updateObj["vitals.$."+postbody.attributes[attribute]["attr"]]= postbody.attributes[attribute]["value"];
-    }
-    console.log(updateObj);
-    updateVital({"vitals._id":postbody.vitalsID}, {$set:updateObj}, res);
-    /*var consumer= new mongooseHelper.getConsumerModel(mongoose);
-    mongooseHelper.updateDB(consumer, {"vitals._id":postbody.vitalsID}, {$set:updateObj},{upsert:true}, function (err, vitals){
-      if(err){
-        console.log('Error');
-        console.log(err);
-      }
-      else{
-       console.log('Updated!');
-        res.send(responseHelper.successMSG(vitals));
-      }
-     });*/
-   }
-  else{
-    res.send(responseHelper.errorMSG('Updating a vital requires a consumer ID and a vitals ID'));
+  var updateVitals= function(checkStatus){
+    if (checkStatus){
+      if (req.body.payload.attributes){
+        var updateObj={};  
+        var attributes= req.body.payload.attributes;
+        for (attribute in attributes){
+          updateObj[attributes[attribute]["attributeName"]]= attributes[attribute]["newValue"];
+        }
+        console.log(updateObj);
+        var vitals= new mongooseHelper.getVitalsModel();
+        mongooseHelper.updateDB(vitals,{_id: req.body.vitalsID},{$set:updateObj},{upsert:true}, 
+                                function(err, response){
+                                  if (err)
+                                    res.send(responseHelper.errorMSG('Error updating Vitals ' + err)); 
+                                  else
+                                    res.send(responseHelper.successMSG('Successfully updated Vitals'));
+                                });
+            } // end if attributes keycheck
+            else{
+                res.send(responseHelper.errorMSG('No attributes to update. Please refer to update documentation.')); 
+            }// end else attributes keycheck
+        }// end if developer has access to consumer record
+        else{
+            res.send(responseHelper.errorMSG('The developer ID you are using does not have permissions'+ 
+                                             'to edit the consumer object with ID' + req.body.consumerID));
+        }// end else developer does not have access to consumer record
+  }// end closure function addPersonalInfo
+  
+  if (req.body.developerID && req.body.consumerID && req.body.vitalsID){
+    console.log(" Both IDs are present ");
+    devIDChecker.check(req.body.developerID, req.body.consumerID, updateVitals);
   }
-};
-
+  else
+    res.send(responseHelper.errorMSG('Updating Vitals requires a vitals ID, consumer ID, and a developerID'));
+}
