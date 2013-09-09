@@ -48,7 +48,7 @@ exports.update= function(req, res){
         var attributes= req.body.payload.attributes;
         for (attribute in attributes){
           
-          updateObj["personalInfo."+attributes[attribute]["attributeName"]]= attributes[attribute]["newValue"];
+          updateObj["personal_info."+attributes[attribute]["attributeName"]]= attributes[attribute]["newValue"];
         }
         console.log(updateObj);
         var consumer= new mongooseHelper.getConsumerModel();
@@ -56,8 +56,10 @@ exports.update= function(req, res){
                                 function(err, response){
                                   if (err)
                                     res.send(responseHelper.errorMSG('Error updating demographic')); 
-                                  else
+                                  else{
+                                    console.log(response);
                                     res.send(responseHelper.successMSG('Successfully updated Personal Info'));
+                                  }
                                 });
             } // end if attributes keycheck
             else{
