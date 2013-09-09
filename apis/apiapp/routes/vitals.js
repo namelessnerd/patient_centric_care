@@ -24,7 +24,7 @@ function updateVital(updateCondition, updateValue, res){
 }
 
 exports.add= function(req, res){
-  console.log(req.body);
+  console.log('post body ' + req.body);
   if (req.body.vitals && req.body.consumerID)
         updateVital({_id:req.body.consumerID}, {$push:{vitals:req.body.vitals}}, res);
   else
