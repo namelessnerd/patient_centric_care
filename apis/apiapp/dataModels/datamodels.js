@@ -104,12 +104,8 @@ exports.getConsumerSchema= function(schema){
                        gender: String,
                        employment: String,
                        industry: String
-                      },
-        developerID:{
-                      devID:String, 
-                      accessUntil: Date
-                    }
-    });
+                      }
+            });
 }
 
 
