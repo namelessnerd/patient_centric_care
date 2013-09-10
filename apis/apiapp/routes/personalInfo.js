@@ -67,5 +67,5 @@ exports.update= function(req, res){
                                                       "payload attribute"));
     }// end else developer does not have access to consumer record
   }// end closure function addPersonalInfo
-  devIDChecker.check(req,  addPersonalInfo);
+  devIDChecker.check(req,  updatePersonalInfo);
 }
