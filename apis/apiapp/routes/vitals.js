@@ -21,13 +21,16 @@ exports.add= function(req, res){
                 when: vitalObj.when,
                 device: vitalObj.device
               });
+              console.log(vitals);
               mongooseHelper.saveDB(vitals,function(err, response){
                                         if (err){
                                             console.log(err);
                                             res.send(responseHelper.errorMSG('Error saving vitals')); 
                                         }
-                                        else
+                                        else{
+                                            console.log(response);
                                             res.send(responseHelper.successMSG('Successfully saved vitals'));
+                                        }
                                       });
             } // end if demographics keycheck
             else{
@@ -40,13 +43,13 @@ exports.add= function(req, res){
         }// end else developer does not have access to consumer record
     
     }// end closure function addPersonalInfo
-  
+  console.log(req.body); 
   if (req.body.developerID && req.body.consumerID && req.body.payload){
     console.log(" Both IDs are present ");
     devIDChecker.check(req.body.developerID, req.body.consumerID, addVitals);
   }
   else
-    res.send(responseHelper.errorMSG('Adding Personal Info requires a consumer ID ,a developerID, a payload object' + 
+    res.send(responseHelper.errorMSG('Adding Vital Info requires a consumer ID ,a developerID, a payload object' + 
                                      'wrapping the object to be added'));
 }
 
