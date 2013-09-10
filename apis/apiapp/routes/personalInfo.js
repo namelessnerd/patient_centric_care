@@ -25,18 +25,29 @@ exports.add= function(req, res){
               res.send(responseHelper.errorActionFailed("Add","Personal Info","Missing Personal Info data in payload"));
             }// end else demographics keycheck
         }// end if developer has access to consumer record
-        else{
+        else if (checkStatus.status==0){
+          console.log('id server responded with an error');
+          res.send(responseHelper.errorActionFailed("Add","Personal Info","The developerID you sent is not valid."));
+        }// end else developer does not have access to consumer record
+        else if (checkStatus.status==-1){
+          console.log('id server responded with an error');
+          res.send(responseHelper.errorActionFailed("Add","Personal Info","You do not have permissions to edit" + 
+                                                " the consumer object. Please check your developer and consumerIDs"));
+        }// end else developer does not have access to consumer record
+        else if (checkStatus.status==-2){
+          console.log('id server responded with an error');
           res.send(responseHelper.errorActionFailed("Add","Personal Info","Missing developer ID, consumer ID or "+
                                                       "payload attribute"));
         }// end else developer does not have access to consumer record
-    
+
+            
     }// end closure function addPersonalInfo
   devIDChecker.check(req,  addPersonalInfo);
 }
 
 exports.update= function(req, res){
   var updatePersonalInfo= function(checkStatus){
-    if (checkStatus){
+    if (checkStatus.status==1){
       if (req.body.payload.attributes){
         var updateObj={};  
         var attributes= req.body.payload.attributes;
@@ -61,7 +72,16 @@ exports.update= function(req, res){
         res.send(responseHelper.errorActionFailed("Update","Personal Info","Missing attribute data in payload"));
       }// end else attributes keycheck
     }// end if developer has access to consumer record
-    else{
+    else if (checkStatus.status==0){
+      console.log('id server responded with an error');
+      res.send(responseHelper.errorActionFailed("Update","Personal Info","The developerID you sent is not valid."));
+    }// end else developer does not have access to consumer record
+    else if (checkStatus.status==-1){
+      console.log('id server responded with an error');
+      res.send(responseHelper.errorActionFailed("Update","Personal Info","You do not have permissions to edit" + 
+                                                " the consumer object. Please check your developer and consumerIDs"));
+    }// end else developer does not have access to consumer record
+    else if (checkStatus.status==-2){
       console.log('id server responded with an error');
       res.send(responseHelper.errorActionFailed("Update","Personal Info","Missing developer ID, consumer ID or "+
                                                       "payload attribute"));
