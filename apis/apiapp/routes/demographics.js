@@ -18,16 +18,21 @@ exports.add= function(req, res){
                                         if (err)
                                             res.send(responseHelper.errorMSG('Error updating demographic')); 
                                         else
-                                            res.send(responseHelper.successMSG('Successfully updated demographic info'));
+                                          if (response){
+                                            res.send(responseHelper.successMSG('Successfully added demographic info'));
+                                          }
+                                          else
+                                            res.send(responseHelper.errorActionFailed("Add", "demographics", 
+                                                     "Incorrect schema"));
                                       });
             } // end if demographics keycheck
             else{
-                res.send(responseHelper.errorMSG('Demographics data missing in payload')); 
+              res.send(responseHelper.errorActionFailed("Add","demographics","Missing Demographic data in payload"));
             }// end else demographics keycheck
         }// end if developer has access to consumer record
         else{
-            res.send(responseHelper.errorMSG('The developer ID you are using does not have permissions'+ 
-                                             'to edit the consumer object with ID' + req.body.consumerID));
+            res.send(responseHelper.errorActionFailed("Add","demographics","Missing developer ID, consumer ID or "+
+                                                      "payload attribute"));
         }// end else developer does not have access to consumer record
     
     }// end closure function addDemographics
@@ -47,7 +52,6 @@ exports.update= function(req, res){
         var updateObj={};  
         var attributes= req.body.payload.attributes;
         for (attribute in attributes){
-          
           updateObj["demographics."+attributes[attribute]["attributeName"]]= attributes[attribute]["newValue"];
         }
         console.log(updateObj);
@@ -56,8 +60,14 @@ exports.update= function(req, res){
                                 function(err, response){
                                   if (err)
                                     res.send(responseHelper.errorMSG('Error updating demographic')); 
-                                  else
-                                    res.send(responseHelper.successMSG('Successfully updated demographic info'));
+                                  else{
+                                    if (response){
+                                      res.send(responseHelper.successMSG('Successfully updated demographic info'));
+                                    }
+                                    else
+                                      res.send(responseHelper.errorActionFailed("Update", "demographics", "Incorrect schema"));
+                                
+                                  }
                                 });
             } // end if attributes keycheck
             else{
@@ -65,15 +75,10 @@ exports.update= function(req, res){
             }// end else attributes keycheck
         }// end if developer has access to consumer record
         else{
-            res.send(responseHelper.errorMSG('The developer ID you are using does not have permissions'+ 
-                                             'to edit the consumer object with ID' + req.body.consumerID));
+            res.send(responseHelper.errorActionFailed("Update","demographics","Missing developer ID, consumer ID or "+
+                                                      "payload attribute"));
         }// end else developer does not have access to consumer record
   }// end closure function addDemographics
-  
-  if (req.body.developerID && req.body.consumerID){
-    console.log(" Both IDs are present ");
-    devIDChecker.check(req.body.developerID, req.body.consumerID, updateDemographics);
-  }
-  else
-    res.send(responseHelper.errorMSG('Updating demographics requires a consumer ID and a developerID'));
+  console.log(" Both IDs are present ");
+  devIDChecker.check(req.body.developerID, req.body.consumerID, updateDemographics);
 }
