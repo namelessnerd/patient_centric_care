@@ -32,7 +32,7 @@ app.put('/update/careplan/diet', careplan.update);
 app.put('/update/personalInfo', personalInfo.update);
 
 
-/* delete methods. All methods to delete records go in here */
+/* delete methods. All methods to delete records go in here 
 
 app.delete('/delete/vital', vitals.delete);
 app.delete('/delete/activity', activity.delete);
@@ -42,7 +42,7 @@ app.delete('/delete/careplan/exercise', careplan.update);
 app.delete('/delete/careplan/vital', careplan.update);
 app.delete('/delete/careplan/diet', careplan.update);
 
-
+*/
 
 
 
