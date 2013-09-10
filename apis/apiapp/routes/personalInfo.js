@@ -13,7 +13,7 @@ exports.add= function(req, res){
         if (checkStatus){
             if (req.body.payload.personalInfo){
               var consumer= new mongooseHelper.getConsumerModel();
-              mongooseHelper.updateDB(consumer,{_id: req.body.consumerID},{$set:{personal_info:req.body.payload.personalInfo}}, 
+              mongooseHelper.updateDB(consumer,{_id: req.get('consumerID')},{$set:{personal_info:req.body.payload.personalInfo}}, 
                                       {upsert:true}, function(err, response){
                                         if (err)
                                             res.send(responseHelper.errorMSG('Error updating Personal Info')); 
@@ -56,11 +56,11 @@ exports.update= function(req, res){
         }
         console.log(updateObj);
         var consumer= new mongooseHelper.getConsumerModel();
-        mongooseHelper.updateDB(consumer,{_id: req.body.consumerID},{$set:updateObj},{upsert:true}, 
+        mongooseHelper.updateDB(consumer,{_id: req.get('consumerID')},{$set:updateObj},{upsert:true}, 
           function(err, response){
             if (err){
               console.log(err);  
-              res.send(responseHelper.errorMSG('Error updating demographic')); 
+              res.send(responseHelper.errorMSG('Error updating Personal Info')); 
             }
             else{
               console.log(response);
