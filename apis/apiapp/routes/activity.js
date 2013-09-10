@@ -50,10 +50,10 @@ exports.add= function(req, res){
           }// end if developer has access to consumer record
           else{
             res.send(responseHelper.errorActionFailed("Add","Activity","Missing developer ID, consumer ID or "+
-                                                      "payload attribute"));
+                                                      "payload attribute or bad Content-Type in header"));
           }// end else developer does not have access to consumer record
     }// end closure function addActivity
-  console.log(req.get('Content-Type'));
+  console.log(req.get('developerID'));
   devIDChecker.check(req, addActivity); 
 }
 
