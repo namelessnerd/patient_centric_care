@@ -11,9 +11,9 @@ var dataModels= require('../dataModels/datamodels.js');
 exports.add= function(req, res){
   var addDemographics= function(checkStatus){
         if (checkStatus){
-            if (req.body.payload.demographics){
+            if (req.body.demographics){
               var consumer= new mongooseHelper.getConsumerModel();
-              mongooseHelper.updateDB(consumer,{_id: req.body.consumerID},{$set:{demographics:req.body.payload.demographics}}, 
+              mongooseHelper.updateDB(consumer,{_id: req.get('consumerID')},{$set:{demographics:req.body.demographics}}, 
                                       {upsert:true}, function(err, response){
                                         if (err)
                                             res.send(responseHelper.errorMSG('Error updating Demographic')); 
@@ -27,7 +27,7 @@ exports.add= function(req, res){
                                       });
             } // end if demographics keycheck
             else{
-              res.send(responseHelper.errorActionFailed("Add","Demographics","Missing Demographic data in payload"));
+              res.send(responseHelper.errorActionFailed("Add","Demographics","Missing Demographic data"));
             }// end else demographics keycheck
         }// end if developer has access to consumer record
          else if (checkStatus.status==0){
@@ -41,8 +41,7 @@ exports.add= function(req, res){
         }// end else developer does not have access to consumer record
         else if (checkStatus.status==-2){
           console.log('id server responded with an error');
-          res.send(responseHelper.errorActionFailed("Add","Demographics","Missing developer ID, consumer ID or "+
-                                                      "payload attribute"));
+          res.send(responseHelper.errorActionFailed("Add","Demographics","Missing developer ID or consumer ID"));
         }// end else developer does not have access to consumer record
     }// end closure function addDemographics
   devIDChecker.check(req, addDemographics);
@@ -51,15 +50,15 @@ exports.add= function(req, res){
 exports.update= function(req, res){
   var updateDemographics= function(checkStatus){
     if (checkStatus){
-      if (req.body.payload.attributes){
+      if (req.body.attributes){
         var updateObj={};  
-        var attributes= req.body.payload.attributes;
+        var attributes= req.body.attributes;
         for (attribute in attributes){
           updateObj["demographics."+attributes[attribute]["attributeName"]]= attributes[attribute]["newValue"];
         }
         console.log(updateObj);
         var consumer= new mongooseHelper.getConsumerModel();
-        mongooseHelper.updateDB(consumer,{_id: req.body.consumerID},{$set:updateObj},{upsert:true}, 
+        mongooseHelper.updateDB(consumer,{_id: req.get('consumerID')},{$set:updateObj},{upsert:true}, 
                                 function(err, response){
                                   if (err)
                                     res.send(responseHelper.errorMSG('Error updating demographic')); 
@@ -78,8 +77,7 @@ exports.update= function(req, res){
             }// end else attributes keycheck
         }// end if developer has access to consumer record
         else{
-            res.send(responseHelper.errorActionFailed("Update","demographics","Missing developer ID, consumer ID or "+
-                                                      "payload attribute"));
+            res.send(responseHelper.errorActionFailed("Update","demographics","Missing developer ID or consumer ID"));
         }// end else developer does not have access to consumer record
   }// end closure function addDemographics
   console.log(" Both IDs are present ");

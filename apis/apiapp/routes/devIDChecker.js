@@ -4,7 +4,7 @@ exports.check=function (req, callback){
   console.log("Inside ID Checker " + req.body);
   var developerID= req.get('DeveloperID'); 
   var consumerID= req.get('ConsumerID'); 
-  if (req.get('Content-Type')=='application/json' && developerID && consumerID && req.body.payload){
+  if (req.get('Content-Type')=='application/json' && developerID && consumerID){
     console.log("Inside developer ID check " +  developerID+ " with consumer" + consumerID);
     var developer= new mongooseHelper.getDeveloperModel();
     try{
