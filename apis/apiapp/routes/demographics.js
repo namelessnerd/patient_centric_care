@@ -36,13 +36,7 @@ exports.add= function(req, res){
         }// end else developer does not have access to consumer record
     
     }// end closure function addDemographics
-  
-  if (req.body.developerID && req.body.consumerID && req.body.payload){
-    console.log(" Both IDs are present ");
-    devIDChecker.check(req.body.developerID, req.body.consumerID, addDemographics);
-  }
-  else
-    res.send(responseHelper.errorMSG('Adding demographics requires a consumer ID and a developerID'));
+  devIDChecker.check(req, addDemographics);
 }
 
 exports.update= function(req, res){
@@ -80,5 +74,5 @@ exports.update= function(req, res){
         }// end else developer does not have access to consumer record
   }// end closure function addDemographics
   console.log(" Both IDs are present ");
-  devIDChecker.check(req.body.developerID, req.body.consumerID, updateDemographics);
+  devIDChecker.check(req, updateDemographics);
 }
