@@ -53,6 +53,7 @@ exports.add= function(req, res){
                                                       "payload attribute"));
           }// end else developer does not have access to consumer record
     }// end closure function addActivity
+  console.log(req.get('Content-Type'));
   devIDChecker.check(req, addActivity); 
 }
 
