@@ -38,29 +38,22 @@ exports.add= function(req, res){
                     });
                   }// end if length of activity is less than 5
                   else{
-                    res.send(responseHelper.errorMSG('You cannot have more than 5 measurements for an activity'));  
+                    res.send(responseHelper.errorActionFailed("Add","Activity","Activity has more than 5 measurements"));
                   }
                 }
                 else
-                    res.send(responseHelper.errorMSG('You cannot save an activity without a measurement'));  
+                  res.send(responseHelper.errorActionFailed("Add","Activity","Missing measurement data in Activity"));
               }// end if activity keycheck
               else{
-                res.send(responseHelper.errorMSG('Activity data missing in payload')); 
+                res.send(responseHelper.errorActionFailed("Add","Activity","Missing attribute data in payload"));
               }// end else demographics keycheck
           }// end if developer has access to consumer record
           else{
-            res.send(responseHelper.errorMSG('The developer ID you are using does not have permissions'+ 
-                                             'to edit the consumer object with ID' + req.body.consumerID));
+            res.send(responseHelper.errorActionFailed("Add","Activity","Missing developer ID, consumer ID or "+
+                                                      "payload attribute"));
           }// end else developer does not have access to consumer record
     }// end closure function addActivity
-  
-  if (req.body.developerID && req.body.consumerID && req.body.payload){
-    console.log(" Both IDs are present ");
-    devIDChecker.check(req.body.developerID, req.body.consumerID, addActivity);
-  }
-  else
-    res.send(responseHelper.errorMSG('Adding activity requires a consumer ID ,a developerID, a payload object' + 
-                                     'wrapping the object to be added'));
+  devIDChecker.check(req, addActivity); 
 }
 
 exports.update= function(req, res){
@@ -87,19 +80,13 @@ exports.update= function(req, res){
                                 });
             } // end if attributes keycheck
             else{
-                res.send(responseHelper.errorMSG('No attributes to update. Please refer to update documentation.')); 
+              res.send(responseHelper.errorActionFailed("Update","Activity","Missing attribute data in payload"));
             }// end else attributes keycheck
         }// end if developer has access to consumer record
         else{
-            res.send(responseHelper.errorMSG('The developer ID you are using does not have permissions'+ 
-                                             'to edit the consumer object with ID' + req.body.consumerID));
+          res.send(responseHelper.errorActionFailed("Update","Activity","Missing developer ID, consumer ID or "+
+                                                      "payload attribute"));
         }// end else developer does not have access to consumer record
   }// end closure function addPersonalInfo
-  
-  if (req.body.developerID && req.body.consumerID && req.body.vitalsID){
-    console.log(" Both IDs are present ");
-    devIDChecker.check(req.body.developerID, req.body.consumerID, updateActivity);
-  }
-  else
-    res.send(responseHelper.errorMSG('Updating Activity requires an activity ID, consumer ID, and a developerID'));
+  devIDChecker.check(req, updateActivity); 
 }
