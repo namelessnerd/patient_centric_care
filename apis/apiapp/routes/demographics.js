@@ -32,7 +32,7 @@ exports.add= function(req, res){
     
     }// end closure function addDemographics
   
-  if (req.body.developerID && req.body.consumerID){
+  if (req.body.developerID && req.body.consumerID && req.body.payload){
     console.log(" Both IDs are present ");
     devIDChecker.check(req.body.developerID, req.body.consumerID, addDemographics);
   }

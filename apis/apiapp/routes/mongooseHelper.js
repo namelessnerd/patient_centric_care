@@ -31,6 +31,11 @@ exports.getCareplanModel= function(mongoose){
 exports.getDeveloperModel= function(){
     return developerModel;
 }
+exports.saveDB= function(modelToSave, callback){
+    modelToSave.save(function (err, updateStatus){
+        callback(err, updateStatus);
+    });
+}
 
 exports.updateDB= function(modelToUpdate, updateCondition,updateValue, isUpsert, callback){
     modelToUpdate.update(updateCondition, updateValue, {upsert:isUpsert}, function (err, updateStatus){
@@ -38,8 +43,8 @@ exports.updateDB= function(modelToUpdate, updateCondition,updateValue, isUpsert,
     });
 }
 
-exports.saveDB= function(modelToSave, callback){
-    modelToSave.save(function (err, updateStatus){
-        callback(err, updateStatus);
-    });
+exports.updateDB= function(modelToUpdate, updateCondition,updateValue, isUpsert, callback){
+modelToUpdate.update(updateCondition, updateValue, {upsert:isUpsert}, function (err, updateStatus){
+    callback(err, updateStatus);
+});
 }
