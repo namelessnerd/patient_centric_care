@@ -14,11 +14,11 @@ var personalInfo= require('./personalInfo');
 /* add methods. All methods to add a new entity go in here */
 
 app.post('/add/consumer', consumer.add);
+app.post('/add/consumer/demographics', demographics.add);
+app.post('/add/consumer/personalInfo', personalInfo.add);
 app.post('/add/careplan', careplan.add);
 app.post('/add/vital', vitals.add);
-app.post('/add/demographics', demographics.add);
 app.post('/add/activity', activity.add);
-app.post('/add/personalInfo', personalInfo.add);
 
 /* update methods. All methods to update records go in here */
 
