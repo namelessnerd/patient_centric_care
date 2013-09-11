@@ -51,7 +51,8 @@ exports.getVitalsSchema= function(schema){
 exports.getActivitySchema= getActivitySchema= function(schema){
     return new schema({
         consumerID: String,
-        activity: String,
+        activityCategory: String,
+        activityType: String,
         measurement: [{name:String, value: Number, unit: String}],
         intensity: String, 
         device: String, 

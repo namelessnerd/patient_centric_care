@@ -10,9 +10,9 @@ var dataModels= require('../dataModels/datamodels.js');
 
 exports.add= function(req, res){
   var addVitals= function(checkStatus){
-        if (checkStatus){
-            if (req.body.payload.vital){
-              var vitalObj= req.body.payload.vital;
+        if (checkStatus.status==1){
+            if (req.body.vital){
+              var vitalObj= req.body.vital;
               var vitals= new mongooseHelper.getVitalsModel()({
                 consumerID: req.body.consumerID,
                 type: vitalObj.type, 
@@ -43,20 +43,13 @@ exports.add= function(req, res){
         }// end else developer does not have access to consumer record
     
     }// end closure function addPersonalInfo
-  console.log(req.body); 
-  if (req.body.developerID && req.body.consumerID && req.body.payload){
-    console.log(" Both IDs are present ");
-    devIDChecker.check(req.body.developerID, req.body.consumerID, addVitals);
-  }
-  else
-    res.send(responseHelper.errorMSG('Adding Vital Info requires a consumer ID ,a developerID, a payload object' + 
-                                     'wrapping the object to be added'));
+     devIDChecker.check(req, addVitals); 
 }
 
 exports.update= function(req, res){
   var updateVitals= function(checkStatus){
-    if (checkStatus){
-      if (req.body.payload.attributes){
+    if (checkStatus.status){
+      if (req.body.attributes){
         var updateObj={};  
         var attributes= req.body.payload.attributes;
         for (attribute in attributes){
@@ -82,10 +75,5 @@ exports.update= function(req, res){
         }// end else developer does not have access to consumer record
   }// end closure function addPersonalInfo
   
-  if (req.body.developerID && req.body.consumerID && req.body.vitalsID){
-    console.log(" Both IDs are present ");
-    devIDChecker.check(req.body.developerID, req.body.consumerID, updateVitals);
-  }
-  else
-    res.send(responseHelper.errorMSG('Updating Vitals requires a vitals ID, consumer ID, and a developerID'));
+    devIDChecker.check(req, updateVitals);  
 }

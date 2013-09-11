@@ -60,9 +60,9 @@ exports.add= function(req, res){
 exports.update= function(req, res){
   var updateActivity= function(checkStatus){
     if (checkStatus){
-      if (req.body.payload.attributes){
+      if (req.body.attributes){
         var updateObj={};  
-        var attributes= req.body.payload.attributes;
+        var attributes= req.body.attributes;
         for (attribute in attributes){
           updateObj[attributes[attribute]["attributeName"]]= attributes[attribute]["newValue"];
         }
@@ -87,6 +87,81 @@ exports.update= function(req, res){
         else{
           res.send(responseHelper.errorActionFailed("Update","Activity","Missing developer ID, consumer ID or "+
                                                       "payload attribute"));
+        }// end else developer does not have access to consumer record
+  }// end closure function addPersonalInfo
+  devIDChecker.check(req, updateActivity); 
+}
+
+
+exports.updateMeasurement= function(req, res){
+  var updateActivity= function(checkStatus){
+    if (checkStatus.status==1){
+      if (req.body.activityID && req.body.measurementID && req.body.attributes){
+        var updateObj={};  
+        var attributes= req.body.attributes;
+        for (attribute in attributes){
+          updateObj["measurement.$."+attributes[attribute]["attributeName"]]= attributes[attribute]["newValue"];
+        }
+        console.log(updateObj);
+        var updateCondition={_id: req.body.activityID,"measurement._id":req.body.measurementID};
+        console.log(updateCondition);
+        var activity= new mongooseHelper.getActivityModel();
+        mongooseHelper.updateDB(activity,updateCondition,
+                                         {$set:updateObj},{upsert:false}, 
+                                function(err, response){
+                                  if (err)
+                                    res.send(responseHelper.errorMSG('Error updating Measurement' + err)); 
+                                  else
+                                    if (response)
+                                      res.send(responseHelper.successMSG('Successfully updated Measurement'));
+                                    else
+                                      res.send(responseHelper.errorMSG('Error updating Measurement. Please check ' + 
+                                               'the object structure you have posted.')); 
+                                });
+            } // end if attributes keycheck
+            else{
+              res.send(responseHelper.errorActionFailed("Update","Activity","Missing attribute data in payload"));
+            }// end else attributes keycheck
+        }// end if developer has access to consumer record
+        else{
+          res.send(responseHelper.errorActionFailed("Update","Activity","Missing developer ID or  consumer ID"));
+        }// end else developer does not have access to consumer record
+  }// end closure function addPersonalInfo
+  devIDChecker.check(req, updateActivity); 
+}
+
+exports.updateVitals= function(req, res){
+  var updateActivity= function(checkStatus){
+    if (checkStatus){
+      if (req.body.activityID && req.body.attributes){
+        var updateObj={};  
+        var attributes= req.body.attributes;
+        for (attribute in attributes){
+          updateObj["vitals."+attributes[attribute]["attributeName"]]= attributes[attribute]["newValue"];
+        }
+        console.log(updateObj);
+        var updateCondition={_id: req.body.activityID};
+        console.log(updateCondition);
+        var activity= new mongooseHelper.getActivityModel();
+        mongooseHelper.updateDB(activity,updateCondition,
+                                         {$set:updateObj},{upsert:false}, 
+                                function(err, response){
+                                  if (err)
+                                    res.send(responseHelper.errorMSG('Error updating Measurement' + err)); 
+                                  else
+                                    if (response)
+                                      res.send(responseHelper.successMSG('Successfully updated Vitals'));
+                                    else
+                                      res.send(responseHelper.errorMSG('Error updating Vitals. Please check ' + 
+                                               'the object structure you have posted.')); 
+                                });
+            } // end if attributes keycheck
+            else{
+              res.send(responseHelper.errorActionFailed("Update","Activity","Missing attribute data in payload"));
+            }// end else attributes keycheck
+        }// end if developer has access to consumer record
+        else{
+          res.send(responseHelper.errorActionFailed("Update","Activity","Missing developer ID or  consumer ID"));
         }// end else developer does not have access to consumer record
   }// end closure function addPersonalInfo
   devIDChecker.check(req, updateActivity); 

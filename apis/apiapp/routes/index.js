@@ -22,14 +22,16 @@ app.post('/add/personalInfo', personalInfo.add);
 
 /* update methods. All methods to update records go in here */
 
+app.put('/update/consumer/demographics', demographics.update);
+app.put('/update/consumer/personalInfo', personalInfo.update);
 app.put('/update/vital', vitals.update);
 app.put('/update/activity', activity.update);
-app.put('/update/demographics', demographics.update);
+app.put('/update/activity/measurement', activity.updateMeasurement);
+app.put('/update/activity/vitals', activity.updateVitals);
 app.put('/update/careplan/medications', careplan.update);
 app.put('/update/careplan/exercise', careplan.update);
 app.put('/update/careplan/vitals', careplan.update);
 app.put('/update/careplan/diet', careplan.update);
-app.put('/update/personalInfo', personalInfo.update);
 
 
 /* delete methods. All methods to delete records go in here 
