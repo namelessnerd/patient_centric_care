@@ -14,7 +14,7 @@ exports.add= function(req, res){
             if (req.body.vital){
               var vitalObj= req.body.vital;
               var vitals= new mongooseHelper.getVitalsModel()({
-                consumerID: req.body.consumerID,
+                consumerID: req.get('ConsumerID'),
                 type: vitalObj.type, 
                 value: vitalObj.value, 
                 units: vitalObj.units, 
@@ -79,8 +79,3 @@ exports.update= function(req, res){
 }
 
 
-exports.getVitals= function(req, res){
-
-
-
-};
