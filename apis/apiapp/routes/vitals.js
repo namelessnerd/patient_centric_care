@@ -57,7 +57,7 @@ exports.update= function(req, res){
         }
         console.log(updateObj);
         var vitals= new mongooseHelper.getVitalsModel();
-        mongooseHelper.updateDB(vitals,{_id: req.body.vitalsID},{$set:updateObj},{upsert:true}, 
+        mongooseHelper.updateDB(vitals,{_id: req.body.vitalID},{$set:updateObj},{upsert:true}, 
                                 function(err, response){
                                   if (err)
                                     res.send(responseHelper.errorMSG('Error updating Vitals ' + err)); 
