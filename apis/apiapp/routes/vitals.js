@@ -51,7 +51,7 @@ exports.update= function(req, res){
     if (checkStatus.status){
       if (req.body.attributes){
         var updateObj={};  
-        var attributes= req.body.payload.attributes;
+        var attributes= req.body.attributes;
         for (attribute in attributes){
           updateObj[attributes[attribute]["attributeName"]]= attributes[attribute]["newValue"];
         }
@@ -77,3 +77,10 @@ exports.update= function(req, res){
   
     devIDChecker.check(req, updateVitals);  
 }
+
+
+exports.getVitals= function(req, res){
+
+
+
+};
