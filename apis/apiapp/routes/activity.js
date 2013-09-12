@@ -11,8 +11,8 @@ var dataModels= require('../dataModels/datamodels.js');
 exports.add= function(req, res){
   var addActivity= function(checkStatus){
         if (checkStatus){
-            if (req.body.payload.activity){
-              var activityObj= req.body.payload.activity;
+            if (req.body.activity){
+              var activityObj= req.body.activity;
                 if (activityObj.measurement){
                   if (activityObj.measurement.length<=5){
                      var activity= new mongooseHelper.getActivityModel()({
