@@ -51,6 +51,7 @@ app.delete('/delete/careplan/diet', careplan.update);
 
 /* get methods go here */
 app.get('/', main.index);
+app.get('/get/activity', activity.get);
 //app.get('/get/consumer', consumer.get);
 
 //app.post('/test/add',testingScripts.add);

@@ -16,7 +16,7 @@ exports.add= function(req, res){
                 if (activityObj.measurement){
                   if (activityObj.measurement.length<=5){
                      var activity= new mongooseHelper.getActivityModel()({
-                       consumerID: req.body.consumerID,
+                       consumerID: req.get('consumerID'),
                        activityCategory: activityObj.activityCategory,
                        activityType: activityObj.activityType,
                        measurement: activityObj.measurement,
@@ -158,3 +158,24 @@ exports.delete= function(req, res){
   }// end deleteVitals closure anon
   devIDChecker.check(req, deleteActivity);
 }
+
+
+exports.get= function(req, res){
+    var queryObj= req.query['values'];
+    if (queryObj)
+      console.log(typeof(JSON.parse(queryObj)));
+
+    //if ('consumerID' in queryObj)
+
+      //  console.log('ID Found');
+    var consumer= new mongooseHelper.getActivityModel();
+    consumer.find(JSON.parse(queryObj), function (err, result){
+      if(err){
+        console.log('Error');
+        console.log(err);
+      }else{
+       console.log('Got it!');
+       res.send(result);
+      }
+    });
+};
