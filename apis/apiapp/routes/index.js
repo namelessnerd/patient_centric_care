@@ -27,19 +27,18 @@ app.put('/update/consumer/personalInfo', personalInfo.update);
 app.put('/update/vital', vitals.update);
 app.put('/update/activity', activity.update);
 app.put('/update/activity/measurement', activity.updateMeasurement);
-app.put('/update/activity/vitals', activity.updateVitals);
-app.put('/update/careplan/medications', careplan.update);
+//app.put('/update/activity/vitals', activity.updateVitals);
+/* app.put('/update/careplan/medications', careplan.update);
 app.put('/update/careplan/exercise', careplan.update);
 app.put('/update/careplan/vitals', careplan.update);
 app.put('/update/careplan/diet', careplan.update);
-
+*/
 
 /* delete methods. All methods to delete records go in here */
 
 app.delete('/delete/vital/:vitalID', vitals.delete);
-
+app.delete('/delete/activity/:activityID', activity.delete);
 /*
-app.delete('/delete/activity', activity.delete);
 app.delete('/delete/careplan', careplan.delete);
 app.delete('/delete/careplan/medication', careplan.update);
 app.delete('/delete/careplan/exercise', careplan.update);

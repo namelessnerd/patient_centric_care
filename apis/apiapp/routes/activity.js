@@ -17,12 +17,12 @@ exports.add= function(req, res){
                   if (activityObj.measurement.length<=5){
                      var activity= new mongooseHelper.getActivityModel()({
                        consumerID: req.body.consumerID,
-                       activity: activityObj.activity,
+                       activityCategory: activityObj.activityCategory,
+                       activityType: activityObj.activityType,
                        measurement: activityObj.measurement,
                        intensity: activityObj.intensity, 
                        device: activityObj.device, 
-                       when: activityObj.when, 
-                       vitals:activityObj.vitals
+                       when: activityObj.when 
                      });
                     mongooseHelper.saveDB(activity,function(err, response){
                       if (err){
@@ -130,39 +130,31 @@ exports.updateMeasurement= function(req, res){
   devIDChecker.check(req, updateActivity); 
 }
 
-exports.updateVitals= function(req, res){
-  var updateActivity= function(checkStatus){
-    if (checkStatus){
-      if (req.body.activityID && req.body.attributes){
-        var updateObj={};  
-        var attributes= req.body.attributes;
-        for (attribute in attributes){
-          updateObj["vitals."+attributes[attribute]["attributeName"]]= attributes[attribute]["newValue"];
-        }
-        console.log(updateObj);
-        var updateCondition={_id: req.body.activityID};
-        console.log(updateCondition);
-        var activity= new mongooseHelper.getActivityModel();
-        mongooseHelper.updateDB(activity,updateCondition,
-                                         {$set:updateObj},{upsert:false}, 
-                                function(err, response){
-                                  if (err)
-                                    res.send(responseHelper.errorMSG('Error updating Measurement' + err)); 
-                                  else
-                                    if (response)
-                                      res.send(responseHelper.successMSG('Successfully updated Vitals'));
-                                    else
-                                      res.send(responseHelper.errorMSG('Error updating Vitals. Please check ' + 
-                                               'the object structure you have posted.')); 
-                                });
-            } // end if attributes keycheck
-            else{
-              res.send(responseHelper.errorActionFailed("Update","Activity","Missing attribute data in payload"));
-            }// end else attributes keycheck
-        }// end if developer has access to consumer record
-        else{
-          res.send(responseHelper.errorActionFailed("Update","Activity","Missing developer ID or  consumer ID"));
-        }// end else developer does not have access to consumer record
-  }// end closure function addPersonalInfo
-  devIDChecker.check(req, updateActivity); 
+exports.delete= function(req, res){
+  var deleteActivity= function(checkStatus){
+    if (checkStatus.status==1){
+      var activityID= req.params.activityID;
+      console.log(activityID + ' is the activity that will be deleted');
+      if (activityID){
+        mongooseHelper.deleteFromDB( new mongooseHelper.getActivityModel(), activityID, function(err, message){
+          if (!err){
+            res.send(responseHelper.successMSG('Successfully deleted the Activity record'));
+          }
+          else{
+            res.send(responseHelper.errorMSG('Error deleting Activity record' + err));
+          }
+        }); // end delete callback
+      }// vital present. delete it
+      else{
+        res.send(responseHelper.errorMSG('You are trying to delete a Activity, but did not send a ActivityID'));
+      }// send payload missing error
+    }// user has access. go ahead and delete the record
+    else if (checkStatus.status==-1){
+      res.send(responseHelper.errorMSG('You are trying to delete a Activity, but do not have access to the consumer record'));
+    }
+    else if (checkStatus.status==-2){
+      res.send(responseHelper.errorMSG('Error in HTTP packet sent to server. Either the content type is wrong (for post or put) or you missed a field'));
+    }
+  }// end deleteVitals closure anon
+  devIDChecker.check(req, deleteActivity);
 }

@@ -56,8 +56,8 @@ exports.getActivitySchema= getActivitySchema= function(schema){
         measurement: [{name:String, value: Number, unit: String}],
         intensity: String, 
         device: String, 
-        when: Date, 
-        vitals:{heartRate: Number}
+        when: Date 
+        //vitals:{heartRate: Number}
     });
 }
 // to be deleted
