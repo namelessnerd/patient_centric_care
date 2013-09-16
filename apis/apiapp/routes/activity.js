@@ -168,8 +168,10 @@ exports.get= function(req, res){
     //if ('consumerID' in queryObj)
 
       //  console.log('ID Found');
+
+    queryObj= JSON.parse(queryObj) ? queryObj : {};
     var consumer= new mongooseHelper.getActivityModel();
-    consumer.find(JSON.parse(queryObj), function (err, result){
+    consumer.find(queryObj, function (err, result){
       if(err){
         console.log('Error');
         console.log(err);
