@@ -78,4 +78,33 @@ exports.update= function(req, res){
     devIDChecker.check(req, updateVitals);  
 }
 
+exports.delete= function(req, res){
+  var deleteVitals= function(checkStatus){
+    if (checkStatus.status==1){
+      var vitalID= req.params.vitalID;
+      console.log(vitalID + ' is the vital that will be deleted');
+      if (vitalID){
 
+        mongooseHelper.deleteFromDB( new mongooseHelper.getVitalsModel(), vitalID, function(err, message){
+          if (!err){
+            res.send(responseHelper.successMSG('Successfully deleted the Vital record'));
+          }
+          else{
+            res.send(responseHelper.errorMSG('Error deleting Vital record' + err));
+          }
+        }); // end delete callback
+      }// vital present. delete it
+      else{
+        res.send(responseHelper.errorMSG('You are trying to delete a Vital, but did not send a VitalID'));
+      }// send payload missing error
+    }// user has access. go ahead and delete the record
+    else if (checkStatus.status==-1){
+      res.send(responseHelper.errorMSG('You are trying to delete a Vital, but do not have access to the consumer record'));
+    }
+    else if (checkStatus.status==-2){
+      res.send(responseHelper.errorMSG('Error in HTTP packet sent to server. Either the content type is wrong (for post or put) or you missed a field'));
+    }
+  }// end deleteVitals closure anon
+  devIDChecker.check(req, deleteVitals);
+
+}

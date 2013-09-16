@@ -44,7 +44,13 @@ exports.updateDB= function(modelToUpdate, updateCondition,updateValue, isUpsert,
 }
 
 exports.updateDB= function(modelToUpdate, updateCondition,updateValue, isUpsert, callback){
-modelToUpdate.update(updateCondition, updateValue, {upsert:isUpsert}, function (err, updateStatus){
+  modelToUpdate.update(updateCondition, updateValue, {upsert:isUpsert}, function (err, updateStatus){
     callback(err, updateStatus);
-});
+  });
+}
+
+exports.deleteFromDB= function(modelToUpdate, IDToDelete, callback){
+  modelToUpdate.findByIdAndRemove(IDToDelete, function (err, updateStatus){
+    callback(err, updateStatus);
+  });
 }

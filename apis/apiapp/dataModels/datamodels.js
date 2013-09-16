@@ -62,7 +62,6 @@ exports.getActivitySchema= getActivitySchema= function(schema){
 }
 // to be deleted
 
-
 exports.getPersonalHealthConditionSchema=  function (schema){
     return new schema ({ 
       consumerID: String, 
