@@ -108,3 +108,25 @@ exports.delete= function(req, res){
   devIDChecker.check(req, deleteVitals);
 
 }
+
+exports.get= function(req, res){
+    var queryObj= req.query['values'];
+    if (queryObj)
+      console.log(typeof(JSON.parse(queryObj)));
+
+    //if ('consumerID' in queryObj)
+
+      //  console.log('ID Found');
+
+    queryObj= JSON.parse(queryObj) ? queryObj : {};
+    var consumer= new mongooseHelper.getVitalsModel();
+    consumer.find(queryObj, function (err, result){
+      if(err){
+        console.log('Error');
+        console.log(err);
+      }else{
+       console.log('Got it!');
+       res.send(result);
+      }
+    });
+};

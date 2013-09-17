@@ -55,34 +55,26 @@ exports.add= function(req, res){
 
 };
 
-/*
- * Get a consumer.
 exports.get= function(req, res){
     var queryObj= req.query['values'];
-    console.log(typeof(JSON.parse(queryObj)));
+    if (queryObj)
+      console.log(typeof(JSON.parse(queryObj)));
 
     //if ('consumerID' in queryObj)
 
       //  console.log('ID Found');
 
-
-
-    var consumer= new mongooseHelper.getConsumerModel(mongoose);
-    mongoose.connect('mongodb://localhost/patientcare');
-    consumer.find({}, function (err, result){
+    queryObj= JSON.parse(queryObj) ? queryObj : {};
+    var consumer= new mongooseHelper.getConsumerModel();
+    consumer.find(queryObj, function (err, result){
       if(err){
         console.log('Error');
         console.log(err);
-        mongoose.disconnect();
       }else{
        console.log('Got it!');
-       mongoose.disconnect();
        res.send(result);
       }
     });
 };
 
-exports.update= function(req, res){
-};
 
- */
