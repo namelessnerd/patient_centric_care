@@ -161,16 +161,23 @@ exports.delete= function(req, res){
 
 
 exports.get= function(req, res){
-    var queryObj= req.query['values'];
+  var queryObj=1;
+  console.log( Object.keys(req.query).length);
+  if (Object.keys(req.query).length){
+     queryObj= req.query['values'];
+  }
+    console.log(req.query);
+    console.log("Before try" + queryObj);
     if (queryObj)
       try{
         queryObj= JSON.parse(queryObj);
+        console.log("In try " + queryObj);
       }
       catch (e){
         res.send('Error parsing inputs');
       }
     else
-      queryObj={}
+        res.send('Error parsing inputs');
     //if ('consumerID' in queryObj)
 
       //  console.log('ID Found');
