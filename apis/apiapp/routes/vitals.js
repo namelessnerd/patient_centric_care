@@ -110,8 +110,12 @@ exports.delete= function(req, res){
 }
 
 exports.get= function(req, res){
-    var queryObj= req.query['values'];
-    var queryObj= req.query['values'];
+    var queryObj=1;
+  console.log( Object.keys(req.query).length);
+  if (Object.keys(req.query).length){
+     queryObj= req.query['values'];
+  }
+
     if (queryObj)
       try{
         queryObj= JSON.parse(queryObj);
