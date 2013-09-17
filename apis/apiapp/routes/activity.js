@@ -163,14 +163,20 @@ exports.delete= function(req, res){
 exports.get= function(req, res){
     var queryObj= req.query['values'];
     if (queryObj)
-      console.log(typeof(JSON.parse(queryObj)));
-
+      try{
+        queryObj= JSON.parse(queryObj);
+      }
+      catch (e){
+        res.send('Error parsing inputs');
+      }
+    else
+      queryObj={}
     //if ('consumerID' in queryObj)
 
       //  console.log('ID Found');
-
-    queryObj= JSON.parse(queryObj) ? queryObj : {};
+    console.log(queryObj);
     var consumer= new mongooseHelper.getActivityModel();
+    //consumer.find(queryObj, function (err, result){
     consumer.find(queryObj, function (err, result){
       if(err){
         console.log('Error');
