@@ -111,14 +111,16 @@ exports.delete= function(req, res){
 
 exports.get= function(req, res){
     var queryObj= req.query['values'];
+    var queryObj= req.query['values'];
     if (queryObj)
-      console.log(typeof(JSON.parse(queryObj)));
-
-    //if ('consumerID' in queryObj)
-
-      //  console.log('ID Found');
-
-    queryObj= JSON.parse(queryObj) ? queryObj : {};
+      try{
+        queryObj= JSON.parse(queryObj);
+      }
+      catch (e){
+        res.send('Error parsing inputs');
+      }
+    else
+      queryObj={}
     var consumer= new mongooseHelper.getVitalsModel();
     consumer.find(queryObj, function (err, result){
       if(err){
