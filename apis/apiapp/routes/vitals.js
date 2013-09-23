@@ -29,7 +29,7 @@ exports.add= function(req, res){
                                         }
                                         else{
                                             console.log(response);
-                                            res.send(responseHelper.successMSG(response));
+                                            res.send(responseHelper.successMSG(response._id));
                                         }
                                       });
             } // end if demographics keycheck
