@@ -31,7 +31,7 @@ exports.add= function(req, res){
                       }
                       else
                         if (response)
-                          res.send(responseHelper.successMSG('Successfully saved activity'));
+                          res.send(responseHelper.successMSG(response._id));
                         else
                           res.send(responseHelper.errorMSG('Could not save activity. Please check' + 
                                                            ' the schema of the object'));
