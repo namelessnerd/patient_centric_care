@@ -29,7 +29,7 @@ exports.add= function(req, res){
                                         }
                                         else{
                                             console.log(response);
-                                            res.send(responseHelper.successMSG('Successfully saved vitals'));
+                                            res.send(responseHelper.successMSG(response));
                                         }
                                       });
             } // end if demographics keycheck
